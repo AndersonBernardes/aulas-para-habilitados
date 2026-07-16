@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificação de Luzes de Painel do Veículo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .progress-container {
+            width: 100%;
+            background-color: #ddd;
+        }
+        .progress-bar {
+            height: 10px;
+            width: 10%;
+            background-color: #4caf50;
+            transition: width 0.3s;
+        }
+        .content {
+            padding: 20px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            max-width: 900px;
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 10px;
+        }
+        .nav-buttons button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .nav-buttons button:disabled {
+            background-color: #ccc;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        #certificado-btn {
+            display: none;
+            margin-top: 20px;
+            background-color: #4caf50;
+            padding: 10px 20px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        /* Alteração aqui para destacar as dicas */
+        .dica-pratica {
+            background-color: #ffffcc;
+            padding: 10px;
+            border-left: 5px solid #ffcc00;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+        /* Estilo do feedback */
+        .feedback {
+            padding: 10px;
+            margin-top: 10px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .correct {
+            background-color: #4caf50;
+            color: white;
+        }
+        .incorrect {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Identificação de Luzes de Painel do Veículo</h1>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <!-- Página 1 -->
+    <div class="content active" id="page-1">
+        <h2>1. Introdução às Luzes de Painel</h2>
+        <p>As luzes de painel do carro são sinais importantes que informam ao motorista sobre o funcionamento do veículo. Cada luz tem uma função específica e deve ser tratada com a devida atenção.</p>
+        <p class="dica-pratica">Fique sempre atento às luzes do painel, elas ajudam a identificar problemas antes que se tornem mais graves.</p>
+        <img src="cores-das-luzes-do-painel.png" alt="Introdução às luzes de painel">
+        
+        <h3>Qual é a função das luzes de painel?</h3>
+        <form id="question-1">
+            <label><input type="radio" name="answer" value="a"> Informar sobre o funcionamento do veículo.</label><br>
+            <label><input type="radio" name="answer" value="b"> Indicar a cor do veículo.</label><br>
+            <label><input type="radio" name="answer" value="c"> Iluminar o interior do carro.</label><br>
+            <button type="button" onclick="checkAnswer('question-1', 'a')">Responder</button>
+        </form>
+        <div id="feedback-1" class="feedback"></div>
+    </div>
+
+    <!-- Página 2 -->
+    <div class="content" id="page-2">
+        <h2>2. Luz do Motor (Check Engine)</h2>
+        <p>Uma das luzes mais comuns e importantes é a luz do motor, também conhecida como "Check Engine". Quando essa luz acende, pode indicar um problema no motor ou no sistema de emissões.</p>
+        <p class="dica-pratica">Se a luz do motor acender, é recomendável levar o veículo a um mecânico para diagnóstico, mesmo que o carro esteja funcionando normalmente.</p>
+        <img src="Check_Engine.jpg" alt="Luz do motor">
+        
+        <h3>O que significa quando a luz "Check Engine" acende?</h3>
+        <form id="question-2">
+            <label><input type="radio" name="answer" value="a"> Um problema no motor ou no sistema de emissões.</label><br>
+            <label><input type="radio" name="answer" value="b"> Falta de combustível no veículo.</label><br>
+            <label><input type="radio" name="answer" value="c"> Problema com o sistema de iluminação do carro.</label><br>
+            <button type="button" onclick="checkAnswer('question-2', 'a')">Responder</button>
+        </form>
+        <div id="feedback-2" class="feedback"></div>
+    </div>
+
+    <!-- Página 3 -->
+    <div class="content" id="page-3">
+        <h2>3. Luz de Óleo</h2>
+        <p>A luz de óleo acende quando o nível de óleo do motor está baixo ou quando a pressão do óleo está insuficiente.</p>
+        <p class="dica-pratica">Verifique o nível de óleo imediatamente ao acender a luz. Se o nível estiver baixo, complete com o óleo adequado. Podemos dizer que uma das luzes consideradas mais perigosas do painel, e serve para mostrar ao motorista que há uma pane no sistema de lubrificação do motor. Nesse cenário, o ideal é parar o veículo de forma imediata, pois sem ser lubrificado, o motor acaba sendo severamente danificado.</p>
+        <img src="Luz_de_oleo.png" alt="Luz de óleo">
+        
+        <h3>O que deve ser feito quando a luz de óleo acende?</h3>
+        <form id="question-3">
+            <label><input type="radio" name="answer" value="a"> Verificar e completar o nível de óleo imediatamente.</label><br>
+            <label><input type="radio" name="answer" value="b"> Continuar dirigindo normalmente.</label><br>
+            <label><input type="radio" name="answer" value="c"> Ignorar e esperar até chegar ao mecânico.</label><br>
+            <button type="button" onclick="checkAnswer('question-3', 'a')">Responder</button>
+        </form>
+        <div id="feedback-3" class="feedback"></div>
+    </div>
+
+    <!-- Página 4 -->
+    <div class="content" id="page-4">
+        <h2>4. Luz de Temperatura do Motor</h2>
+        <p>A luz de temperatura acende quando o motor está superaquecendo. Isso pode ser causado por problemas no sistema de arrefecimento, como falta de água no radiador ou falha na bomba de água.</p>
+        <p class="dica-pratica">Se essa luz acender, pare o carro imediatamente e deixe o motor esfriar. Verifique o nível de água do radiador e procure um mecânico.</p>
+        <img src="Luz_temperatura.jpeg" alt="Luz de temperatura do motor">
+        
+        <h3>O que deve ser feito quando a luz de temperatura acende?</h3>
+        <form id="question-4">
+            <label><input type="radio" name="answer" value="a"> Parar o carro imediatamente e verificar o nível de água do radiador.</label><br>
+            <label><input type="radio" name="answer" value="b"> Continuar dirigindo até o próximo posto de gasolina.</label><br>
+            <label><input type="radio" name="answer" value="c"> Ignorar e esperar até o carro esfriar sozinho.</label><br>
+            <button type="button" onclick="checkAnswer('question-4', 'a')">Responder</button>
+        </form>
+        <div id="feedback-4" class="feedback"></div>
+    </div>
+
+    <!-- Página 5 -->
+    <div class="content" id="page-5">
+        <h2>5. Luz de Bateria</h2>
+        <p>A luz da bateria acende quando há um problema no sistema de carregamento do carro, como a falha do alternador ou um cabo solto.</p>
+        <p class="dica-pratica">Se a luz da bateria acender, verifique a fiação e o alternador. Se o problema persistir, procure um profissional para evitar ficar na estrada com a bateria descarregada.</p>
+        <img src="luz_Bateria.jpg" alt="Luz de bateria">
+        
+        <h3>O que significa quando a luz da bateria acende?</h3>
+        <form id="question-5">
+            <label><input type="radio" name="answer" value="a"> Falha no sistema de carregamento do carro.</label><br>
+            <label><input type="radio" name="answer" value="b"> Problema com o ar-condicionado.</label><br>
+            <label><input type="radio" name="answer" value="c"> Baixa pressão nos pneus.</label><br>
+            <button type="button" onclick="checkAnswer('question-5', 'a')">Responder</button>
+        </form>
+        <div id="feedback-5" class="feedback"></div>
+    </div>
+
+    <!-- Página 6 -->
+    <div class="content" id="page-6">
+        <h2>6. Luz de Freio</h2>
+        <p>A luz de freio pode acender por várias razões, como o nível baixo de fluido de freio ou quando o sistema de freios precisa de manutenção.</p>
+        <p class="dica-pratica">Verifique o nível do fluido de freio. Se a luz acender e o freio não estiver funcionando corretamente, leve o carro imediatamente a um mecânico.</p>
+        <img src="luz_freio_acesa.jpg" alt="Luz de freio">
+        
+        <h3>O que significa quando a luz de freio acende?</h3>
+        <form id="question-6">
+            <label><input type="radio" name="answer" value="a"> O nível de fluido de freio está baixo ou há falha no sistema.</label><br>
+            <label><input type="radio" name="answer" value="b"> O carro está com falta de combustível.</label><br>
+            <label><input type="radio" name="answer" value="c"> Está faltando água no radiador.</label><br>
+            <button type="button" onclick="checkAnswer('question-6', 'a')">Responder</button>
+        </form>
+        <div id="feedback-6" class="feedback"></div>
+    </div>
+
+    <!-- Página 7 -->
+    <div class="content" id="page-7">
+        <h2>7. Luz de ABS</h2>
+        <p>A luz do ABS (Sistema de Antibloqueio de Rodas) acende quando há uma falha nesse sistema, que é responsável por evitar o travamento das rodas durante frenagens bruscas.</p>
+        <p class="dica-pratica">Caso a luz do ABS acenda, verifique o sistema de frenagem o quanto antes para garantir que o sistema esteja funcionando corretamente.</p>
+        <img src="luz-abs-acesa.jpg" alt="Luz de ABS">
+        
+        <h3>O que deve ser feito quando a luz do ABS acende?</h3>
+        <form id="question-7">
+            <label><input type="radio" name="answer" value="a"> Verificar o sistema de frenagem imediatamente.</label><br>
+            <label><input type="radio" name="answer" value="b"> Continuar dirigindo até o próximo mecânico.</label><br>
+            <label><input type="radio" name="answer" value="c"> Ignorar, pois o sistema não influencia a frenagem normal.</label><br>
+            <button type="button" onclick="checkAnswer('question-7', 'a')">Responder</button>
+        </form>
+        <div id="feedback-7" class="feedback"></div>
+    </div>
+
+    <!-- Página 8 -->
+    <div class="content" id="page-8">
+        <h2>8. Luz de Cinto de Segurança</h2>
+        <p>A luz do cinto de segurança acende quando o motorista ou passageiro não está usando o cinto de segurança. Além de ser uma medida de segurança, é obrigatório por lei.</p>
+        <p class="dica-pratica">Sempre use o cinto de segurança. Se a luz acender, pare o veículo com segurança e coloque o cinto.</p>
+        <img src="https://via.placeholder.com/900x500" alt="Luz do cinto de segurança">
+        
+        <h3>O que significa quando a luz do cinto de segurança acende?</h3>
+        <form id="question-8">
+            <label><input type="radio" name="answer" value="a"> O cinto de segurança não está sendo usado.</label><br>
+            <label><input type="radio" name="answer" value="b"> Há um problema no sistema de iluminação do carro.</label><br>
+            <label><input type="radio" name="answer" value="c"> O carro está sem combustível.</label><br>
+            <button type="button" onclick="checkAnswer('question-8', 'a')">Responder</button>
+        </form>
+        <div id="feedback-8" class="feedback"></div>
+    </div>
+
+    <!-- Página 9 -->
+    <div class="content" id="page-9">
+        <h2>9. Luz de Combustível</h2>
+        <p>A luz de combustível acende quando o nível de combustível no tanque está baixo. É importante abastecer o quanto antes para evitar ficar sem combustível.</p>
+        <p class="dica-pratica">Sempre que a luz de combustível acender, pare para abastecer o veículo. Dirigir com o tanque quase vazio pode danificar a bomba de combustível.</p>
+        <img src="luz_combustivel.png" alt="Luz de combustível">
+        
+        <h3>O que significa quando a luz de combustível acende?</h3>
+        <form id="question-9">
+            <label><input type="radio" name="answer" value="a"> O nível de combustível no tanque está baixo.</label><br>
+            <label><input type="radio" name="answer" value="b"> O motor está superaquecendo.</label><br>
+            <label><input type="radio" name="answer" value="c"> Há um problema no sistema de freios.</label><br>
+            <button type="button" onclick="checkAnswer('question-9', 'a')">Responder</button>
+        </form>
+        <div id="feedback-9" class="feedback"></div>
+    </div>
+
+    <!-- Página 10 -->
+    <div class="content" id="page-10">
+        <h2>10. Luz de Direção (Seta)</h2>
+        <p>A luz de direção acende quando você ativa a seta para mudar de faixa ou direção. Ela se apaga automaticamente quando a manobra é concluída.</p>
+        <p class="dica-pratica">Use sempre as setas ao mudar de faixa ou direção para garantir a segurança de todos os motoristas.</p>
+        <img src="luz_seta.png" alt="Luz de direção">
+        
+        <h3>Qual a função da luz de direção?</h3>
+        <form id="question-10">
+            <label><input type="radio" name="answer" value="a"> Indicar que a seta foi ativada para mudança de direção.</label><br>
+            <label><input type="radio" name="answer" value="b"> Indicar falta de combustível.</label><br>
+            <label><input type="radio" name="answer" value="c"> Indicar problemas no motor.</label><br>
+            <button type="button" onclick="checkAnswer('question-10', 'a')">Responder</button>
+        </form>
+        <div id="feedback-10" class="feedback"></div>
+    </div>
+
+    <div class="nav-buttons">
+        <button id="prev-btn" onclick="changePage(-1)" disabled>Anterior</button>
+        <button id="next-btn" onclick="changePage(1)">Próximo</button>
+    </div>
+
+    <button id="certificado-btn">Baixar Certificado</button>
+
+    <script>
+        let currentPage = 1;
+        const totalPages = 10;
+
+        function changePage(direction) {
+            document.getElementById(`page-${currentPage}`).classList.remove('active');
+            currentPage += direction;
+            document.getElementById(`page-${currentPage}`).classList.add('active');
+            updateNavigation();
+            updateProgressBar();
+        }
+
+        function updateNavigation() {
+            document.getElementById('prev-btn').disabled = currentPage === 1;
+            document.getElementById('next-btn').disabled = currentPage === totalPages;
+        }
+
+        function updateProgressBar() {
+            const progress = (currentPage / totalPages) * 100;
+            document.getElementById('progress-bar').style.width = `${progress}%`;
+            if (currentPage === totalPages) {
+                document.getElementById('certificado-btn').style.display = 'block';
+            }
+        }
+
+        function checkAnswer(questionId, correctAnswer) {
+            const form = document.getElementById(questionId);
+            const selectedAnswer = form.querySelector('input[name="answer"]:checked');
+            const feedbackElement = document.getElementById('feedback-' + questionId.split('-')[1]);
+
+            if (!selectedAnswer) {
+                alert("Por favor, selecione uma opção.");
+                return;
+            }
+
+            if (selectedAnswer.value === correctAnswer) {
+                feedbackElement.textContent = "Resposta correta!";
+                feedbackElement.classList.add('correct');
+                feedbackElement.classList.remove('incorrect');
+            } else {
+                feedbackElement.textContent = "Resposta incorreta. Tente novamente.";
+                feedbackElement.classList.add('incorrect');
+                feedbackElement.classList.remove('correct');
+            }
+        }
+
+        updateNavigation();
+        updateProgressBar();
+    </script>
+</body>
+</html>

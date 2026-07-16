@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 05</title>
+    <link rel="stylesheet" href="/Equipe/styles.css">
+    <style>
+        /* Botões ocultos inicialmente */
+        .buttons {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            background-color: #3498db; /* Cor inicial do botão */
+            color: white;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .buttons button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Estilo para o botão avançar após o vídeo ser assistido */
+        .buttons .btn-advance {
+            background-color: #3498db; /* Cor inicial do botão Avançar */
+        }
+
+        .buttons .btn-advance.active {
+            background-color: #2ecc71; /* Cor verde após assistir o vídeo */
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="title">Aula 06</h1>
+            <p class="subtitle">Cuidados com a Higiene do idoso/p>
+
+            <!-- Vídeo de Introdução -->
+            <div class="video-container">
+                <video id="videoElement" width="680" height="480" controls>
+                    <source src="" type="video/mp4">
+                    Seu navegador não suporta o formato de vídeo.
+                </video>
+            </div>
+
+            <!-- Botões de Navegação -->
+            <div class="buttons" id="buttons">
+                <button class="btn" onclick="window.location.href='index.html'">Voltar</button>
+                <button class="btn btn-advance" onclick="window.location.href='page11.html'">Avançar</button>
+            </div>
+
+        </div>
+    </header>
+
+    <script>
+        // Obtendo o vídeo e os botões
+        const video = document.getElementById('videoElement');
+        const buttons = document.getElementById('buttons');
+        const advanceButton = document.querySelector('.btn-advance');
+
+        // Função para exibir os botões após o vídeo ser completamente assistido
+        function onVideoEnd() {
+            buttons.style.display = 'block'; // Exibe os botões
+            advanceButton.classList.add('active'); // Adiciona a classe 'active' ao botão avançar
+        }
+
+        // Adicionando o evento 'ended' para saber quando o vídeo foi totalmente assistido
+        video.addEventListener('ended', onVideoEnd);
+    </script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards Interativos com Imagens</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .card {
+            background: #fff;
+            border: 2px solid #ddd;
+            border-radius: 16px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 800px; /* Duas vezes maior */
+            padding: 60px;
+            text-align: center;
+            display: none;
+        }
+        .card.active {
+            display: block;
+        }
+        .card img {
+            max-width: 30%;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+        .button {
+            border: none;
+            padding: 20px 30px;
+            border-radius: 12px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        .button.true {
+            background-color: #4caf50;
+            color: #fff;
+        }
+        .button.false {
+            background-color: #f44336;
+            color: #fff;
+        }
+        .feedback {
+            margin-top: 30px;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .btn {
+            border: none;
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Card -->
+    <div id="card-container" class="card">
+        <img id="imagem" src="" alt="Pergunta">
+        <div class="buttons">
+            <button class="button true" onclick="responder(true)">
+                <span>👍</span> Verdadeiro
+            </button>
+            <button class="button false" onclick="responder(false)">
+                <span>👎</span> Falso
+            </button>
+        </div>
+        <div class="feedback" id="feedback"></div>
+    </div>
+
+    <!-- Botões de navegação -->
+    <div class="buttons" id="buttons" style="display: none;">
+        <button class="btn" onclick="window.location.href='index.html'">Voltar</button>
+        <button class="btn" onclick="window.location.href='page12.html'">Avançar</button>
+    </div>
+
+    <script>
+        // Frases e respostas configuradas pelo desenvolvedor
+        const cardsData = [
+            { imagem: "idoso Alimentação.jpg", correto: false }, // Substitua pelos nomes corretos das imagens
+            { imagem: "jaqueta.jpg", correto: true },
+            { imagem: "caes_mamiferos.jpg", correto: true },
+            { imagem: "2_mais_2.jpg", correto: false },
+            { imagem: "sol_terra.jpg", correto: false },
+            { imagem: "lua_fases.jpg", correto: true }
+        ];
+
+        let currentCardIndex = 0; // Índice do card atual
+
+        // Referências ao DOM
+        const cardContainer = document.getElementById("card-container");
+        const imagemElement = document.getElementById("imagem");
+        const feedbackElement = document.getElementById("feedback");
+        const navButtons = document.getElementById("buttons");
+
+        // Função para exibir o próximo card
+        function mostrarCard(index) {
+            if (index < cardsData.length) {
+                imagemElement.src = cardsData[index].imagem;
+                feedbackElement.textContent = ""; // Limpa o feedback
+                cardContainer.classList.add("active");
+            } else {
+                // Fim do jogo
+                cardContainer.style.display = "none"; // Oculta o último card
+                navButtons.style.display = "flex";   // Exibe os botões de navegação
+            }
+        }
+
+        // Função para tratar a resposta do aluno
+        function responder(resposta) {
+            const correto = cardsData[currentCardIndex].correto;
+            if (resposta === correto) {
+                feedbackElement.textContent = "Correto!";
+                feedbackElement.style.color = "green";
+
+                // Avança para o próximo card após um pequeno atraso
+                setTimeout(() => {
+                    currentCardIndex++;
+                    mostrarCard(currentCardIndex);
+                }, 1000);
+            } else {
+                feedbackElement.textContent = "Errado! Tente novamente.";
+                feedbackElement.style.color = "red";
+            }
+        }
+
+        // Inicializa o primeiro card
+        mostrarCard(currentCardIndex);
+    </script>
+</body>
+</html>

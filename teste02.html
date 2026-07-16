@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noções de Mecânica Básica para Mulheres</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .progress-container {
+            width: 100%;
+            background-color: #ddd;
+        }
+        .progress-bar {
+            height: 10px;
+            width: 10%;
+            background-color: #4caf50;
+            transition: width 0.3s;
+        }
+        .content {
+            padding: 20px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            max-width: 900px;
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 10px;
+        }
+        .nav-buttons button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .nav-buttons button:disabled {
+            background-color: #ccc;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        #certificado-btn {
+            display: none;
+            margin-top: 20px;
+            background-color: #4caf50;
+            padding: 10px 20px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Noções de Mecânica Básica para Mulheres</h1>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <!-- Página 1 -->
+    <div class="content active" id="page-1">
+        <h2>1. Introdução à Mecânica Básica</h2>
+        <p>Este curso foi desenvolvido para mulheres que querem entender melhor os fundamentos da mecânica automotiva.</p>
+        <p>Com o conhecimento básico, você poderá realizar pequenos reparos e cuidar melhor do seu veículo. Vamos começar com uma visão geral dos sistemas de um carro.</p>
+        <p><strong>Dica Prática:</strong> Nunca tenha medo de procurar ajuda, mas também aproveite para aprender o máximo possível para se sentir mais segura na estrada.</p>
+        <img src="https://via.placeholder.com/800x400?text=Mecânica+Automotiva" alt="Introdução à mecânica">
+    </div>
+
+    <!-- Página 2 -->
+    <div class="content" id="page-2">
+        <h2>2. O Motor: Como Funciona?</h2>
+        <p>O motor é o coração do seu carro, responsável por transformar combustível em energia mecânica. Existem dois tipos principais: o motor a combustão interna e o motor elétrico.</p>
+        <p><strong>Dica Prática:</strong> Fazer a troca regular de óleo do motor é essencial para garantir o seu bom funcionamento e aumentar sua vida útil.</p>
+        <img src="https://via.placeholder.com/800x400?text=Motor+de+Carro" alt="Funcionamento do motor">
+    </div>
+
+    <!-- Página 3 -->
+    <div class="content" id="page-3">
+        <h2>3. O Sistema de Transmissão</h2>
+        <p>A transmissão é responsável por transferir a potência do motor para as rodas. A transmissão manual requer que o motorista troque de marcha, enquanto a transmissão automática faz isso sozinha.</p>
+        <p><strong>Dica Prática:</strong> Se o carro apresenta dificuldades para engatar a marcha, pode ser sinal de que o fluido de transmissão precisa ser trocado.</p>
+        <img src="https://via.placeholder.com/800x400?text=Sistemas+de+Transmissão" alt="Sistema de Transmissão">
+    </div>
+
+    <!-- Página 4 -->
+    <div class="content" id="page-4">
+        <h2>4. Sistema de Suspensão</h2>
+        <p>O sistema de suspensão é responsável por proporcionar uma condução mais suave e controlar o impacto das irregularidades da estrada. Ele inclui peças como molas, amortecedores e barra estabilizadora.</p>
+        <p><strong>Dica Prática:</strong> Se o carro estiver fazendo barulhos ao passar por buracos, é bom verificar o sistema de suspensão para evitar problemas maiores.</p>
+        <img src="https://via.placeholder.com/800x400?text=Sistema+de+Suspensão" alt="Suspensão de carro">
+    </div>
+
+    <!-- Página 5 -->
+    <div class="content" id="page-5">
+        <h2>5. Sistema de Freios</h2>
+        <p>Os freios são fundamentais para a segurança do veículo. Existem dois tipos principais: o sistema de freios a disco e a tambor.</p>
+        <p><strong>Dica Prática:</strong> Quando o carro começar a fazer um barulho metálico ao frear, isso pode ser sinal de que as pastilhas de freio precisam ser substituídas.</p>
+        <img src="https://via.placeholder.com/800x400?text=Sistema+de+Freios" alt="Sistema de freios">
+    </div>
+
+    <!-- Página 6 -->
+    <div class="content" id="page-6">
+        <h2>6. Sistema Elétrico e Bateria</h2>
+        <p>O sistema elétrico do carro inclui a bateria, o alternador e outros componentes. A bateria armazena energia e fornece a eletricidade necessária para o carro funcionar.</p>
+        <p><strong>Dica Prática:</strong> Verifique regularmente o nível de carga da bateria. Se o carro estiver com dificuldades para ligar, pode ser sinal de que a bateria está fraca.</p>
+        <img src="https://via.placeholder.com/800x400?text=Sistema+Elétrico" alt="Sistema elétrico do carro">
+    </div>
+
+    <!-- Página 7 -->
+    <div class="content" id="page-7">
+        <h2>7. Cuidados com os Pneus</h2>
+        <p>Os pneus são essenciais para a segurança e o desempenho do carro. Verificar a pressão, alinhamento e balanceamento regularmente são cuidados importantes.</p>
+        <p><strong>Dica Prática:</strong> Mantenha os pneus devidamente calibrados para evitar desgaste irregular e garantir maior estabilidade no carro.</p>
+        <img src="https://via.placeholder.com/800x400?text=Cuidados+com+Pneus" alt="Cuidados com os pneus">
+    </div>
+
+    <!-- Página 8 -->
+    <div class="content" id="page-8">
+        <h2>8. O Sistema de Arrefecimento</h2>
+        <p>O sistema de arrefecimento evita que o motor superaqueça. Ele é composto pelo radiador, mangueiras, termostato, entre outros componentes.</p>
+        <p><strong>Dica Prática:</strong> Verifique o nível de água do radiador regularmente e sempre troque o fluido de arrefecimento conforme recomendado pelo fabricante.</p>
+        <img src="https://via.placeholder.com/800x400?text=Sistema+de+Arrefecimento" alt="Sistema de arrefecimento">
+    </div>
+
+    <!-- Página 9 -->
+    <div class="content" id="page-9">
+        <h2>9. Manutenção Preventiva</h2>
+        <p>A manutenção preventiva é a chave para evitar grandes problemas e garantir a longevidade do veículo. Troca de óleo, filtros, verificações de fluidos e outros são essenciais.</p>
+        <p><strong>Dica Prática:</strong> Programe-se para realizar as manutenções conforme o manual do proprietário do veículo, evitando problemas mais sérios no futuro.</p>
+        <img src="https://via.placeholder.com/800x400?text=Manutenção+Preventiva" alt="Manutenção preventiva">
+    </div>
+
+    <!-- Página 10 -->
+    <div class="content" id="page-10">
+        <h2>10. Dicas para Prolongar a Vida Útil do Carro</h2>
+        <p>Além da manutenção regular, cuidar do seu carro no dia a dia pode prolongar sua vida útil.</p>
+        <p><strong>Dica Prática:</strong> Evite acelerações bruscas, faça as trocas de marcha corretamente e evite sobrecarregar o veículo com peso excessivo.</p>
+        <img src="https://via.placeholder.com/800x400?text=Prolongando+Vida+Útil" alt="Prolongando a vida útil do carro">
+    </div>
+
+    <!-- Página 11 - Avaliação -->
+    <div class="content" id="page-11">
+        <h2>Avaliação Final</h2>
+        <form id="quiz-form">
+            <p>1. Qual a principal função do motor?</p>
+            <input type="radio" name="q1" value="certo"> Transformar combustível em energia <br>
+            <input type="radio" name="q1" value="errado"> Apenas manter o carro ligado <br>
+
+            <p>2. O que indica a necessidade de troca de pastilhas de freio?</p>
+            <input type="radio" name="q2" value="certo"> Ruído metálico ao frear <br>
+            <input type="radio" name="q2" value="errado"> Volante tremendo <br>
+
+            <p>3. Qual item faz parte do sistema elétrico?</p>
+            <input type="radio" name="q3" value="certo"> Alternador <br>
+            <input type="radio" name="q3" value="errado"> Pistão <br>
+
+            <p>4. O que acontece se a correia dentada quebrar?</p>
+            <input type="radio" name="q4" value="certo"> O motor pode ser danificado <br>
+            <input type="radio" name="q4" value="errado"> O carro gasta mais combustível <br>
+
+            <p>5. Como saber se a bateria está fraca?</p>
+            <input type="radio" name="q5" value="certo"> Dificuldade para ligar o carro <br>
+            <input type="radio" name="q5" value="errado"> Pneus murchos <br>
+
+            <p>6. Quando calibrar os pneus?</p>
+            <input type="radio" name="q6" value="certo"> A cada 15 dias <br>
+            <input type="radio" name="q6" value="errado"> Apenas quando furar <br>
+
+            <p>7. Como evitar desgaste prematuro da embreagem?</p>
+            <input type="radio" name="q7" value="certo"> Não descansando o pé na embreagem <br>
+            <input type="radio" name="q7" value="errado"> Acelerando forte sempre <br>
+
+            <p>8. O que fazer ao furar um pneu?</p>
+            <input type="radio" name="q8" value="certo"> Trocar o pneu imediatamente <br>
+            <input type="radio" name="q8" value="errado"> Continuar dirigindo devagar <br>
+
+            <p>9. Qual fluido precisa ser trocado regularmente?</p>
+            <input type="radio" name="q9" value="certo"> Óleo do motor <br>
+            <input type="radio" name="q9" value="errado"> Água do radiador <br>
+
+            <p>10. O que fazer se a luz do freio acender no painel?</p>
+            <input type="radio" name="q10" value="certo"> Verificar as pastilhas de freio <br>
+            <input type="radio" name="q10" value="errado"> Ignorar se o carro estiver funcionando <br>
+
+            <br>
+            <button type="button" id="responder-btn" onclick="checkQuiz()">Responder</button>
+        </form>
+        <p id="quiz-result"></p>
+        <button id="certificado-btn" onclick="solicitarCertificado()">Solicitar Certificado</button>
+    </div>
+
+    <div class="nav-buttons">
+        <button id="prev-btn" onclick="changePage(-1)" disabled>Anterior</button>
+        <button id="next-btn" onclick="changePage(1)">Próximo</button>
+    </div>
+
+    <script>
+        let currentPage = 1;
+        const totalPages = 11;
+
+        // Função para navegar entre as páginas e atualizar a barra de progresso
+        function changePage(direction) {
+            document.getElementById(`page-${currentPage}`).classList.remove('active');
+            currentPage += direction;
+            document.getElementById(`page-${currentPage}`).classList.add('active');
+            document.getElementById('progress-bar').style.width = (currentPage / totalPages) * 100 + "%";
+
+            // Desabilitar botão "Anterior" na primeira página e "Próximo" na última
+            document.getElementById('prev-btn').disabled = currentPage === 1;
+            document.getElementById('next-btn').disabled = currentPage === totalPages;
+        }
+
+        // Função para verificar as respostas e mostrar o resultado
+        function checkQuiz() {
+            let score = 0;
+            const answers = {
+                q1: "certo", q2: "certo", q3: "certo", q4: "certo", q5: "certo",
+                q6: "certo", q7: "certo", q8: "certo", q9: "certo", q10: "certo"
+            };
+
+            for (let i = 1; i <= 10; i++) {
+                const question = document.getElementsByName(`q${i}`);
+                for (let answer of question) {
+                    if (answer.checked && answer.value === answers[`q${i}`]) {
+                        score++;
+                    }
+                }
+            }
+
+            document.getElementById("quiz-result").innerHTML = `Você acertou ${score} de 10 questões.`;
+
+            // Ativar botão de certificado se o usuário acertar 50% ou mais
+            if (score >= 5) {
+                document.getElementById("certificado-btn").style.display = "inline-block";
+            }
+
+            // Desabilitar o botão de responder após a tentativa
+            document.getElementById("responder-btn").disabled = true;
+        }
+
+        // Função para solicitar o certificado
+        function solicitarCertificado() {
+            alert("Parabéns! Você completou o curso com sucesso. Seu certificado está sendo gerado.");
+        }
+    </script>
+
+</body>
+</html>

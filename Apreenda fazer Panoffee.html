@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="theme-color" content="#ffffff">
+    <title>Curso: Aprendendo a Fazer Panoffee Tone com Panetone</title>
+    <link href="#" rel="stylesheet">
+    <style>
+        /* Reset básico para garantir consistência entre navegadores */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #f39c12;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .course-description {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .course-description img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-description div {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #f39c12;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .course-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-content h3 {
+            font-size: 1.6rem;
+            color: #e67e22;
+            margin-bottom: 10px;
+        }
+
+        .course-content ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .course-content ul li {
+            margin: 10px 0;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .recipe-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .recipe-section h3 {
+            color: #e67e22;
+        }
+
+        .ingredients, .steps {
+            margin-top: 20px;
+        }
+
+        .ingredients ul, .steps ol {
+            margin-left: 20px;
+        }
+
+        footer {
+            background-color: #34495e;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .course-description {
+                flex-direction: column;
+            }
+
+            .course-content, .recipe-section {
+                padding: 15px;
+            }
+        }
+
+        .quiz-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .question-container {
+            margin-bottom: 20px;
+        }
+
+        .question-container:last-child {
+            margin-bottom: 40px;
+        }
+
+        .quiz-container h3 {
+            font-size: 1.6rem;
+            color: #f39c12;
+            margin-bottom: 15px;
+        }
+
+        .options input {
+            margin-right: 10px;
+        }
+
+        .feedback {
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+
+        .btn {
+            background-color: #f39c12;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        .btn:disabled {
+            background-color: #bdc3c7;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1> Curso: Aprenda a Fazer Panoffee com Panetone muito gostoso </h1>
+        <p>Descubra como criar um delicioso Panoffee usando Panetone, uma versão criativa e incrível do clássico Banoffee!</p>
+    </header>
+
+    <div class="container">
+        <section class="course-description">
+            <div>
+                <h2>Sobre o Curso</h2>
+                <p>Aprenda a preparar um delicioso Panoffee, onde a base tradicional é substituída por fatias de panetone, trazendo uma combinação incrível de sabores! Surpreenda sua família e amigos com essa receita única.</p>
+            </div>
+
+            <img src="Panoffe.jpeg" alt="Imagem do Banoffee com Panetone">
+        </section>
+
+        <section class="course-content">
+            <h3>Conteúdo do Curso</h3>
+            <ul>
+                <li>Introdução ao Panoffee Tone e sua adaptação com panetone</li>
+                <li>Como preparar a base crocante com fatias de panetone</li>
+                <li>Preparo do doce de leite perfeito para o Panoffee</li>
+                <li>Montagem e decoração para um Panoffee Tone irresistível</li>
+                <li>Dicas de apresentação e sugestões de variações da receita</li>
+            </ul>
+        </section>
+
+        <!-- Receita do Panoffee Tone com Panetone -->
+        <section class="recipe-section">
+            <h3>Receita: Panoffee com Panetone</h3>
+
+            <div class="ingredients">
+                <h4>Ingredientes:</h4>
+                <ul>
+                    <li>1 panetone (preferencialmente sem recheio, para facilitar a montagem)</li>
+                    <li>1 lata de leite condensado (para o doce de leite)</li>
+                    <li>200g de creme de leite fresco</li>
+                    <li>2 colheres de sopa de açúcar</li>
+                    <li>3 bananas maduras</li>
+                    <li>Chocolate em pó ou raspas de chocolate (opcional, para decorar)</li>
+                    <li>Amendoim ou nozes trituradas (opcional, para decoração)</li>
+                </ul>
+            </div>
+
+            <div class="steps">
+                <h4>Modo de Preparo:</h4>
+                <ol>
+                    <li><strong>Base do Panoffee Tone:</strong> Corte o panetone em fatias de aproximadamente 2 cm. Forre o fundo de uma forma ou recipiente com as fatias de panetone, cobrindo todo o fundo. Se desejar, pode umedecer as fatias com um pouco de leite para deixá-las mais macias.</li>
+                    <li><strong>Doce de leite:</strong> Cozinhe a lata de leite condensado em uma panela de pressão por 40 minutos (ou use doce de leite pronto). Deixe esfriar antes de usar.</li>
+                    <li><strong>Chantilly:</strong> Bata o creme de leite fresco com o açúcar até obter chantilly firme. Reserve na geladeira.</li>
+                    <li><strong>Montagem:</strong> Após o doce de leite esfriar, espalhe uma camada sobre as fatias de panetone. Coloque as bananas cortadas em rodelas por cima do doce de leite.</li>
+                    <li><strong>Finalização:</strong> Cubra com uma camada de chantilly. Se desejar, decore com chocolate em pó, raspas de chocolate ou até mesmo amendoins ou nozes trituradas para um toque extra.</li>
+                    <li><strong>Refrigeração:</strong> Leve à geladeira por pelo menos 2 horas antes de servir, para que a sobremesa fique bem firme e geladinha.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Avaliação do Curso -->
+        <section class="quiz-container">
+            <h3>Avaliação: Como foi o seu aprendizado?</h3>
+            <form id="quizForm">
+                <!-- Pergunta 1 -->
+                <div class="question-container">
+                    <label>Qual é a principal base utilizada na receita de Panoffee?</label>
+                    <div class="options">
+                        <input type="radio" name="question1" value="Panetone" id="q1opt1">
+                        <label for="q1opt1">Panetone</label><br>
+                        <input type="radio" name="question1" value="Biscoito" id="q1opt2">
+                        <label for="q1opt2">Biscoito</label><br>
+                        <input type="radio" name="question1" value="Pão" id="q1opt3">
+                        <label for="q1opt3">Pão</label>
+                    </div>
+                </div>
+
+                <!-- Pergunta 2 -->
+                <div class="question-container">
+                    <label>O que é usado para preparar o doce de leite na receita?</label>
+                    <div class="options">
+                        <input type="radio" name="question2" value="Leite condensado" id="q2opt1">
+                        <label for="q2opt1">Leite condensado</label><br>
+                        <input type="radio" name="question2" value="Leite" id="q2opt2">
+                        <label for="q2opt2">Leite</label><br>
+                        <input type="radio" name="question2" value="Açúcar" id="q2opt3">
+                        <label for="q2opt3">Açúcar</label>
+                    </div>
+                </div>
+
+                <!-- Pergunta 3 -->
+                <div class="question-container">
+                    <label>Quanto tempo deve deixar o Panoffee na geladeira antes de servir?</label>
+                    <div class="options">
+                        <input type="radio" name="question3" value="1 hora" id="q3opt1">
+                        <label for="q3opt1">1 hora</label><br>
+                        <input type="radio" name="question3" value="2 horas" id="q3opt2">
+                        <label for="q3opt2">2 horas</label><br>
+                        <input type="radio" name="question3" value="3 horas" id="q3opt3">
+                        <label for="q3opt3">3 horas</label>
+                    </div>
+                </div>
+
+                <!-- Pergunta 4 -->
+                <div class="question-container">
+                    <label>Quais são os ingredientes opcionais para decorar o Panoffee?</label>
+                    <div class="options">
+                        <input type="radio" name="question4" value="Nozes ou amendoim" id="q4opt1">
+                        <label for="q4opt1">Nozes ou amendoim</label><br>
+                        <input type="radio" name="question4" value="Frutas vermelhas" id="q4opt2">
+                        <label for="q4opt2">Frutas vermelhas</label><br>
+                        <input type="radio" name="question4" value="Coco ralado" id="q4opt3">
+                        <label for="q4opt3">Coco ralado</label>
+                    </div>
+                </div>
+
+                <!-- Pergunta 5 -->
+                <div class="question-container">
+                    <label>Qual é o principal sabor do Panoffee Tone?</label>
+                    <div class="options">
+                        <input type="radio" name="question5" value="Banana" id="q5opt1">
+                        <label for="q5opt1">Banana</label><br>
+                        <input type="radio" name="question5" value="Chocolate" id="q5opt2">
+                        <label for="q5opt2">Chocolate</label><br>
+                        <input type="radio" name="question5" value="Manga" id="q5opt3">
+                        <label for="q5opt3">Manga</label>
+                    </div>
+                </div>
+
+                <!-- Botão de enviar -->
+                <button type="button" class="btn" id="submitQuiz" onclick="submitQuiz()">Enviar Respostas</button>
+            </form>
+
+            <div id="feedback" class="feedback"></div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; Plataforma - AF Treinamentos e Desenvolvimentos - 2025 - Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        function submitQuiz() {
+            let score = 0;
+            const feedbackElement = document.getElementById('feedback');
+            const quizForm = document.forms['quizForm'];
+
+            // Pergunta 1
+            if (quizForm['question1'].value === 'Panetone') score++;
+            // Pergunta 2
+            if (quizForm['question2'].value === 'Leite condensado') score++;
+            // Pergunta 3
+            if (quizForm['question3'].value === '2 horas') score++;
+            // Pergunta 4
+            if (quizForm['question4'].value === 'Nozes ou amendoim') score++;
+            // Pergunta 5
+            if (quizForm['question5'].value === 'Banana') score++;
+
+            feedbackElement.innerHTML = `Você acertou ${score} de 5 perguntas.`;
+
+            // Desabilita o botão após enviar
+            document.getElementById('submitQuiz').disabled = true;
+        }
+    </script>
+
+</body>
+</html>

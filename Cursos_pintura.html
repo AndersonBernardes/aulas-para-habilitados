@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Pintura Residencial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #005f73;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+        .content {
+            padding: 20px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            max-width: 900px;
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+        .nav-buttons button {
+            padding: 10px 20px;
+            background-color: #005f73;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .nav-buttons button:disabled {
+            background-color: #ccc;
+        }
+        img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Curso de Pintura Residencial</h1>
+    </div>
+
+    <div class="content active" id="page-1">
+        <h2>1. Introdução à Pintura Residencial</h2>
+        <img src="https://example.com/introducao.jpg" alt="Pintura Residencial">
+        <p>A pintura residencial vai muito além da estética, pois protege as paredes contra umidade, mofo e desgaste. Aqui você aprenderá técnicas eficazes para pintar sua casa como um profissional.</p>
+        <p><strong>Dica:</strong> Escolha tintas laváveis para ambientes internos, pois facilitam a limpeza e aumentam a durabilidade da pintura.</p>
+    </div>
+
+    <div class="content" id="page-2">
+        <h2>2. Ferramentas e Materiais Essenciais</h2>
+        <img src="https://example.com/ferramentas.jpg" alt="Ferramentas para Pintura">
+        <p>Antes de começar, tenha em mãos:</p>
+        <ul>
+            <li><strong>Rolos e pincéis:</strong> Rolos são ideais para áreas grandes, enquanto pincéis são úteis para detalhes e cantos.</li>
+            <li><strong>Fita crepe:</strong> Essencial para proteger rodapés e molduras.</li>
+            <li><strong>Lona plástica:</strong> Para cobrir móveis e evitar respingos.</li>
+            <li><strong>Espátula e massa corrida:</strong> Para corrigir imperfeições nas paredes.</li>
+        </ul>
+        <p><strong>Dica prática:</strong> Use um rolo de lã para um acabamento mais uniforme e menos marcas de pincel.</p>
+    </div>
+
+    <div class="content" id="page-3">
+        <h2>3. Preparação das Superfícies</h2>
+        <img src="https://example.com/preparacao.jpg" alt="Preparação de Superfície">
+        <p>Uma boa preparação garante um acabamento perfeito:</p>
+        <ul>
+            <li><strong>Limpeza:</strong> Retire poeira, mofo e sujeiras antes de pintar.</li>
+            <li><strong>Correção de falhas:</strong> Use massa corrida para tapar buracos e lixe para nivelar.</li>
+            <li><strong>Aplicação de primer:</strong> Melhora a aderência da tinta e uniformiza a absorção.</li>
+        </ul>
+        <p><strong>Dica prática:</strong> Passe um pano úmido após lixar para remover o pó e evitar irregularidades na pintura.</p>
+    </div>
+
+    <div class="content" id="page-4">
+        <h2>4. Técnicas de Pintura</h2>
+        <img src="https://example.com/tecnicas.jpg" alt="Técnicas de Pintura">
+        <p>As principais técnicas incluem:</p>
+        <ul>
+            <li><strong>Pintura com rolo:</strong> Movimentos verticais e uniformes evitam marcas.</li>
+            <li><strong>Pincel para detalhes:</strong> Ideal para cantos e áreas pequenas.</li>
+            <li><strong>Demãos intercaladas:</strong> Aguarde a secagem entre as camadas para um melhor acabamento.</li>
+        </ul>
+        <p><strong>Dica prática:</strong> Sempre comece pintando do teto para evitar manchas na parede já pintada.</p>
+    </div>
+
+    <div class="content" id="page-5">
+        <h2>5. Acabamentos e Manutenção</h2>
+        <img src="https://example.com/acabamentos.jpg" alt="Acabamentos">
+        <p>Depois de pintar, finalize com:</p>
+        <ul>
+            <li><strong>Remoção de fitas:</strong> Tire antes da tinta secar completamente para evitar descasques.</li>
+            <li><strong>Correções:</strong> Revise e retoque falhas para um acabamento impecável.</li>
+            <li><strong>Limpeza dos materiais:</strong> Lave pincéis e rolos para reutilização futura.</li>
+        </ul>
+        <p><strong>Dica:</strong> Para manter sua pintura bonita por mais tempo, limpe as paredes regularmente com um pano úmido.</p>
+    </div>
+
+    <div class="content" id="page-6">
+        <h2>6. Erros Comuns e Como Evitá-los</h2>
+        <img src="https://example.com/erros.jpg" alt="Erros de Pintura">
+        <p>Evite os problemas mais comuns:</p>
+        <ul>
+            <li><strong>Marcas de rolo:</strong> Sempre aplique a tinta de maneira uniforme.</li>
+            <li><strong>Descascamento:</strong> Use primer e prepare bem a superfície antes de pintar.</li>
+            <li><strong>Manchas irregulares:</strong> Respeite o tempo de secagem entre demãos.</li>
+        </ul>
+        <p><strong>Dica prática:</strong> Trabalhe sempre em seções pequenas para garantir cobertura uniforme.</p>
+    </div>
+
+    <div class="nav-buttons">
+        <button id="prev-btn" onclick="changePage(-1)" disabled>Voltar</button>
+        <button id="next-btn" onclick="changePage(1)">Avançar</button>
+    </div>
+
+    <script>
+        let currentPage = 1;
+        const totalPages = 6;
+
+        function changePage(direction) {
+            document.getElementById(`page-${currentPage}`).classList.remove('active');
+            currentPage += direction;
+            document.getElementById(`page-${currentPage}`).classList.add('active');
+
+            document.getElementById('prev-btn').disabled = currentPage === 1;
+            document.getElementById('next-btn').disabled = currentPage === totalPages;
+        }
+    </script>
+
+</body>
+</html>

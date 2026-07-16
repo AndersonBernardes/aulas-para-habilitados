@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acumule Pontos (Cuidado com as Bombas!)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        #game-board {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            max-width: 500px;
+            margin: 20px auto;
+        }
+        .cell {
+            width: 80px;
+            height: 80px;
+            background-color: #4caf50;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .cell:hover {
+            background-color: #45a049;
+        }
+        .bomb {
+            background-color: #f44336 !important;
+            cursor: not-allowed;
+        }
+        #score {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+        #result {
+            font-size: 2rem;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+        .hidden {
+            visibility: hidden;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .btn {
+            border: none;
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Acumule Pontos (Cuidado com as Bombas!)</h1>
+    <p> Clique nos campos verdes para ganhar pontos. Mas cuidado, as bombas fazem você perder pontos!</p>
+    <div id="game-board"></div>
+    <div id="score">Pontos: 0</div>
+    <div id="result"></div>
+
+    <!-- Botões de navegação -->
+    <div class="buttons" id="buttons" style="display: none;">
+        <button class="btn" onclick="window.location.href='index.html'">Voltar</button>
+        <button class="btn" onclick="window.location.href='parabens.html'">Avançar</button>
+    </div>
+
+    <script>
+        // Configurações do jogo
+        const totalCells = 20; // Total de células
+        const winningScore = 10; // Pontuação para vencer
+        const bombPenalty = -5; // Pontos perdidos ao clicar em uma bomba
+        const randomPoints = [1, 2, 3, 4]; // Pontos possíveis para ganhar
+
+        // Referências ao DOM
+        const gameBoard = document.getElementById("game-board");
+        const scoreElement = document.getElementById("score");
+        const resultElement = document.getElementById("result");
+        const buttons = document.getElementById("buttons");
+
+        let score = 0; // Pontuação inicial
+
+        // Gera as células do jogo
+        function createGameBoard() {
+            for (let i = 0; i < totalCells; i++) {
+                const cell = document.createElement("div");
+                cell.classList.add("cell");
+                
+                // Define se será uma bomba ou uma célula de pontuação
+                const isBomb = Math.random() < 0.3; // 30% de chance de ser uma bomba
+                if (isBomb) {
+                    cell.dataset.type = "bomb";
+                } else {
+                    cell.dataset.type = "point";
+                    cell.dataset.value = randomPoints[Math.floor(Math.random() * randomPoints.length)];
+                }
+
+                // Adiciona o evento de clique
+                cell.addEventListener("click", handleCellClick);
+                gameBoard.appendChild(cell);
+            }
+        }
+
+        // Lida com o clique nas células
+        function handleCellClick(event) {
+            const cell = event.target;
+
+            // Verifica o tipo de célula
+            if (cell.dataset.type === "bomb") {
+                score += bombPenalty;
+                cell.classList.add("bomb");
+                cell.textContent = "💣";
+            } else if (cell.dataset.type === "point") {
+                const value = parseInt(cell.dataset.value);
+                score += value;
+                cell.textContent = `+${value}`;
+                cell.style.backgroundColor = "#2196f3";
+            }
+
+            // Remove o evento de clique para não clicar duas vezes
+            cell.removeEventListener("click", handleCellClick);
+
+            // Atualiza o placar
+            updateScore();
+        }
+
+        // Atualiza o placar
+        function updateScore() {
+            scoreElement.textContent = `Pontos: ${score}`;
+
+            // Condição de vitória
+            if (score >= winningScore) {
+                resultElement.textContent = "Você venceu! 🎉";
+                endGame();
+            }
+
+            // Condição de derrota
+            if (score <= 0) {
+                resultElement.textContent = "Você perdeu! 💣";
+                endGame();
+            }
+        }
+
+        // Finaliza o jogo
+        function endGame() {
+            const cells = document.querySelectorAll(".cell");
+            cells.forEach(cell => {
+                cell.removeEventListener("click", handleCellClick);
+                cell.classList.add("hidden");
+            });
+
+            // Exibe os botões de navegação
+            buttons.style.display = "flex";
+        }
+
+        // Inicializa o jogo
+        createGameBoard();
+    </script>
+</body>
+</html>
+
+

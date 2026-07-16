@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificação de Luzes de Painel do Veículo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .progress-container {
+            width: 100%;
+            background-color: #ddd;
+        }
+        .progress-bar {
+            height: 10px;
+            width: 10%;
+            background-color: #4caf50;
+            transition: width 0.3s;
+        }
+        .content {
+            padding: 20px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            max-width: 900px;
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 10px;
+        }
+        .nav-buttons button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .nav-buttons button:disabled {
+            background-color: #ccc;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .dica-pratica {
+            background-color: #ffffcc;
+            padding: 10px;
+            border-left: 5px solid #ffcc00;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Identificação de Luzes de Painel do Veículo</h1>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <!-- Página 1 -->
+    <div class="content active" id="page-1">
+    <h2>1. Introdução às Luzes de Painel</h2>
+    <p>Sabe quando acende uma luz no painel do carro e você não faz ideia do que significa? Dá aquele frio na barriga, né? Parece que o carro está tentando dizer alguma coisa, mas a gente não fala a mesma língua. A boa notícia é: isso tem solução!</p>
+    <p>Com a informação certa, aquela luz deixa de ser um susto e vira um alerta útil — e é exatamente isso que vamos fazer aqui: transformar o que parece complicado em algo claro e prático, para você usar no dia a dia, com confiança e segurança.</p>
+    <p>As luzes de painel do carro são sinais importantes que informam ao motorista sobre o funcionamento do veículo. Cada luz tem uma função específica e merece atenção, pois muitas vezes são elas que avisam antes que o problema fique sério.</p>
+
+    <div class="dica-pratica">
+        <strong>Dica Prática:</strong> Fique sempre de olho nas luzes do painel. Elas são como um “idioma” do carro para te avisar que algo precisa ser verificado. Entender esses sinais pode evitar muita dor de cabeça!
+    </div>
+
+    <!-- Espaço para o GIF animado -->
+    <div style="margin-top: 20px; text-align: center;">
+        <img src="Preocupação.png" style="max-width: 100%; border-radius: 8px;">
+        <p style="font-style: italic; color: #555;">Como você se sente quando vê essa luz misteriosa acender...</p>
+    </div>
+
+    <img src="cores-das-luzes-do-painel.png" alt="Introdução às luzes de painel">
+</div>
+
+
+    <!-- Página 2 -->
+    <div class="content" id="page-2">
+        <h2>2. Luz do Motor (Check Engine)</h2>
+        <p>Uma das luzes mais comuns e importantes é a luz do motor, também conhecida como "Check Engine". Quando essa luz acende, pode indicar um problema no motor ou no sistema de emissões.</p>
+        <p><strong>Dica Prática:</strong> Se a luz do motor acender, é recomendável levar o veículo a um mecânico para diagnóstico, mesmo que o carro esteja funcionando normalmente.</p>
+        <img src="Check_Engine.jpg" alt="Luz do motor">
+    </div>
+
+    <!-- Página 3 -->
+    <div class="content" id="page-3">
+        <h2>3. Luz de Óleo</h2>
+        <p>A luz de óleo acende quando o nível de óleo do motor está baixo ou quando a pressão do óleo está insuficiente.</p>
+        <p><strong>Dica Prática:</strong> Verifique o nível de óleo imediatamente ao acender a luz. Se o nível estiver baixo, complete com o óleo adequado. Podemos dizer que é uma das luzes mais perigosas do painel e deve ser tratada com urgência.</p>
+        <img src="Luz_de_oleo.png" alt="Luz de óleo">
+    </div>
+
+    <!-- Página 4 -->
+    <div class="content" id="page-4">
+        <h2>4. Luz de Temperatura do Motor</h2>
+        <p>A luz de temperatura acende quando o motor está superaquecendo. Isso pode ser causado por problemas no sistema de arrefecimento, como falta de água no radiador ou falha na bomba de água.</p>
+        <p><strong>Dica Prática:</strong> Se essa luz acender, pare o carro imediatamente e deixe o motor esfriar. Verifique o nível de água do radiador e procure um mecânico.</p>
+        <img src="Luz_temperatura.jpeg" alt="Luz de temperatura do motor">
+    </div>
+
+    <!-- Página 5 -->
+    <div class="content" id="page-5">
+        <h2>5. Luz de Bateria</h2>
+        <p>A luz da bateria acende quando há um problema no sistema de carregamento do carro, como a falha do alternador ou um cabo solto.</p>
+        <p><strong>Dica Prática:</strong> Se a luz da bateria acender, verifique a fiação e o alternador. Se o problema persistir, procure um profissional para evitar ficar na estrada com a bateria descarregada.</p>
+        <img src="luz_Bateria.jpg" alt="Luz de bateria">
+    </div>
+
+    <!-- Página 6 -->
+    <div class="content" id="page-6">
+        <h2>6. Luz de Freio</h2>
+        <p>A luz de freio pode acender por várias razões, como o nível baixo de fluido de freio ou quando o sistema de freios precisa de manutenção.</p>
+        <p><strong>Dica Prática:</strong> Verifique o nível do fluido de freio. Se a luz acender e o freio não estiver funcionando corretamente, leve o carro imediatamente a um mecânico.</p>
+        <img src="luz_freio_acesa.jpg" alt="Luz de freio">
+    </div>
+
+    <!-- Página 7 -->
+    <div class="content" id="page-7">
+        <h2>7. Luz de ABS</h2>
+        <p>A luz do ABS (Sistema de Antibloqueio de Rodas) acende quando há uma falha nesse sistema, que é responsável por evitar o travamento das rodas durante frenagens bruscas.</p>
+        <p><strong>Dica Prática:</strong> Caso a luz do ABS acenda, verifique o sistema de frenagem o quanto antes para garantir que o sistema esteja funcionando corretamente.</p>
+        <img src="luz-abs-acesa.jpg" alt="Luz de ABS">
+    </div>
+
+    <!-- Página 8 -->
+    <div class="content" id="page-8">
+        <h2>8. Luz de Cinto de Segurança</h2>
+        <p>A luz do cinto de segurança acende quando o motorista ou passageiro não está usando o cinto de segurança. Além de ser uma medida de segurança, é obrigatório por lei.</p>
+        <p><strong>Dica Prática:</strong> Sempre use o cinto de segurança. Se a luz acender, pare o veículo com segurança e coloque o cinto.</p>
+        <img src="https://via.placeholder.com/800x400?text=Luz+de+Cinto" alt="Luz de cinto de segurança">
+    </div>
+
+    <!-- Página 9 -->
+    <div class="content" id="page-9">
+        <h2>9. Luz de Direção Hidráulica</h2>
+        <p>A luz de direção hidráulica acende quando há falha no sistema de direção assistida do veículo, o que pode dificultar a manobra do carro.</p>
+        <p><strong>Dica Prática:</strong> Se essa luz acender, é importante verificar o nível do fluido de direção e procurar um mecânico se necessário.</p>
+        <img src="https://via.placeholder.com/800x400?text=Luz+de+Direção+Hidráulica" alt="Luz de direção hidráulica">
+    </div>
+
+    <!-- Página 10 -->
+    <div class="content" id="page-10">
+        <h2>10. Luz de Airbag</h2>
+        <p>A luz do airbag acende quando há um problema no sistema de segurança do veículo. Isso pode afetar a ativação do airbag em caso de acidente.</p>
+        <p><strong>Dica Prática:</strong> Caso a luz do airbag acenda, leve o carro ao mecânico o mais rápido possível para garantir que o sistema esteja funcionando adequadamente.</p>
+        <img src="https://via.placeholder.com/800x400?text=Luz+de+Airbag" alt="Luz de Airbag">
+    </div>
+
+    <!-- Página 11 - Certificado -->
+    <div class="content" id="page-11">
+        <h2>Parabéns pela Conclusão do Curso!</h2>
+        <p class="highlight">
+            Muito bem, você concluiu o curso e agora é hora de testar seu conhecimento. Acerte 50% e obtenha o seu certificado por um valor simbólico para que nos ajude a continuar com esse trabalho que é transformar seu conhecimento.
+        </p>
+        <a href="https://forms.office.com/r/QUunTVCHjP" target="_blank">
+            <button>Realizar Avaliação</button>
+        </a>
+    </div>
+
+    <div class="nav-buttons">
+        <button id="prev-btn" onclick="changePage(-1)" disabled>Anterior</button>
+        <button id="next-btn" onclick="changePage(1)">Próximo</button>
+    </div>
+
+    <script>
+        let currentPage = 1;
+        const totalPages = 11;
+
+        function changePage(direction) {
+            document.getElementById(`page-${currentPage}`).classList.remove('active');
+            currentPage += direction;
+            document.getElementById(`page-${currentPage}`).classList.add('active');
+            updateNavigation();
+            updateProgressBar();
+        }
+
+        function updateNavigation() {
+            document.getElementById('prev-btn').disabled = currentPage === 1;
+            document.getElementById('next-btn').disabled = currentPage === totalPages;
+        }
+
+        function updateProgressBar() {
+            const progress = (currentPage / totalPages) * 100;
+            document.getElementById('progress-bar').style.width = `${progress}%`;
+        }
+
+        updateNavigation();
+        updateProgressBar();
+    </script>
+</body>
+</html>

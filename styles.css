@@ -1,0 +1,139 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Estilos de fundo e container */
+body {
+    background: linear-gradient(45deg, #87CEEB, #B0E0E6); /* Gradiente suave de azul claro e azul esbranquiçado */
+    color: #333; /* Texto em cinza escuro para maior legibilidade */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+.container {
+    padding: 30px;
+    max-width: 800px;
+    width: 100%;
+    position: relative;
+    background-color: #fff; /* Fundo branco para maior contraste com o conteúdo */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Título */
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #4B8C7B; /* Tom de verde suave */
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* Texto de celebração */
+.celebration-text {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeIn 3s ease-in-out forwards;
+    color: #6A5ACD; /* Lilás suave */
+}
+
+/* Estilo dos botões */
+.btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #20B2AA; /* Cor suave verde */
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 0;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards, scaleUp 0.5s 2s forwards;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #3CB371; /* Verde mais escuro */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo do formulário de perguntas */
+.quiz-form {
+    margin-bottom: 20px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+/* Estilo de lista para as respostas */
+.quiz-form ul {
+    list-style-type: none; /* Remove os pontos da lista */
+    padding: 0;
+}
+
+.quiz-form li {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+.quiz-form label {
+    display: block;
+    cursor: pointer;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .celebration-text {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+    }
+}
+

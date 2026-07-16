@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="theme-color" content="#ffffff">
+    <title>AF Treinamentos</title>
+    <link href="#" rel="stylesheet">
+    <style>
+        /* Reset de margens e preenchimento */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #0066cc;
+            color: white;
+            padding: 40px 20px; /* Aumentei o padding para garantir um bom espaço ao redor */
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        header .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            max-height: 80px; /* Ajuste o tamanho conforme necessário */
+            width: auto;
+        }
+
+        /* Barra de navegação */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #005bb5;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        /* Main content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            width: 100%;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            display: none; /* Inicialmente escondendo as perguntas */
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .response-button {
+            display: block;
+            font-size: 1.2em;
+            padding: 15px 30px;
+            margin: 15px 0;
+            width: 100%;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .response-button:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+        .response-button:active {
+            background-color: #1c6ea4;
+        }
+
+        .feedback {
+            margin-top: 20px;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        .feedback.correct {
+            color: #2ecc71;
+        }
+
+        .feedback.incorrect {
+            color: #e74c3c;
+        }
+
+        /* Botões de navegação */
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            visibility: hidden;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #3498db;
+            color: white;
+            font-size: 1.1em;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+        .btn:active {
+            background-color: #1c6ea4;
+        }
+
+        /* Rodapé */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+         /* Logo com ajustes para não sobrepor conteúdo */
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            max-height: 80px; /* Ajustando o tamanho do logo */
+            width: auto;
+        }
+
+        .footer p {
+            font-size: 1rem;
+        }
+
+        /* Responsividade para dispositivos móveis */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .response-button {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+      
+        <h1>AF Treinamentos e Desenvolvimentos</h1>
+        <p>Aprenda com nossos módulos interativos. Vamos começar!</p>
+    </header>
+
+    <div class="main-content">
+        <!-- Pergunta 1 -->
+        <div class="container" id="pergunta1">
+            <h2>Qual é a principal responsabilidade de um cuidador familiar?</h2>
+            <button class="response-button" onclick="verificarResposta(1, 'errado')">Garantir que o idoso siga uma dieta rigorosa</button>
+            <button class="response-button" onclick="verificarResposta(1, 'correto')">Garantir o conforto e bem-estar físico e emocional</button>
+            <button class="response-button" onclick="verificarResposta(1, 'errado')">Garantir que o idoso não saia de casa</button>
+            <div id="feedback1" class="feedback"></div>
+        </div>
+
+        <!-- Pergunta 2 -->
+        <div class="container" id="pergunta2">
+            <h2>Qual é a melhor forma de garantir a segurança de um idoso em casa?</h2>
+            <button class="response-button" onclick="verificarResposta(2, 'errado')">Bloquear todas as portas e janelas</button>
+            <button class="response-button" onclick="verificarResposta(2, 'correto')">Instalar dispositivos de segurança e eliminar riscos de quedas</button>
+            <button class="response-button" onclick="verificarResposta(2, 'errado')">Proibir o uso de aparelhos eletrônicos</button>
+            <div id="feedback2" class="feedback"></div>
+        </div>
+
+        <!-- Pergunta 3 -->
+        <div class="container" id="pergunta3">
+            <h2>Como um cuidador pode ajudar a manter a autonomia de um idoso?</h2>
+            <button class="response-button" onclick="verificarResposta(3, 'errado')">Fazer tudo por ele, para evitar que se machuque</button>
+            <button class="response-button" onclick="verificarResposta(3, 'correto')">Incentivar atividades que ele ainda consiga realizar sozinho</button>
+            <button class="response-button" onclick="verificarResposta(3, 'errado')">Limitar as saídas e interações sociais</button>
+            <div id="feedback3" class="feedback"></div>
+        </div>
+
+        <!-- Botões de Navegação (Inicialmente ocultos) -->
+        <div class="buttons" id="navigationButtons">
+            <button id="voltar" class="btn" onclick="window.location.href='page01.html'">Voltar</button>
+            <button id="avancar" class="btn" onclick="window.location.href='page03.html'">Avançar</button>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <p>&copy; Plataforma - AF Treinamentos e Desenvolvimentos - 2025 - Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        let perguntaAtual = 1;
+        let respostasCorretas = [false, false, false];
+
+        // Função para mostrar a próxima pergunta
+        function mostrarPergunta(pergunta) {
+            const perguntas = document.querySelectorAll('.container');
+            perguntas.forEach(p => p.style.display = 'none');
+            document.getElementById(`pergunta${pergunta}`).style.display = 'block';
+        }
+
+        // Função para verificar a resposta
+        function verificarResposta(pergunta, resposta) {
+            const feedback = document.getElementById(`feedback${pergunta}`);
+            const buttons = document.querySelectorAll(`#pergunta${pergunta} .response-button`);
+            const currentFeedback = (resposta === 'correto') ? 'Resposta correta! Parabéns!' : 'Resposta errada. Tente novamente!';
+            const feedbackClass = (resposta === 'correto') ? 'correct' : 'incorrect';
+            
+            feedback.textContent = currentFeedback;
+            feedback.classList.add(feedbackClass);
+            
+            if (resposta === 'correto') {
+                respostasCorretas[pergunta - 1] = true;
+                buttons.forEach(button => button.disabled = true);
+                setTimeout(() => { avancarPergunta(); }, 1000);
+            } else {
+                buttons.forEach(button => button.disabled = false);
+            }
+        }
+
+        // Função para avançar para a próxima pergunta ou mostrar os botões de navegação
+        function avancarPergunta() {
+            if (perguntaAtual < 3) {
+                perguntaAtual++;
+                mostrarPergunta(perguntaAtual);
+            } else {
+                document.getElementById('navigationButtons').style.visibility = 'visible';
+            }
+        }
+
+        mostrarPergunta(perguntaAtual);
+    </script>
+</body>
+</html>

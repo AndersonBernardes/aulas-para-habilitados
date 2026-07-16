@@ -1,0 +1,326 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AF CURSOS ONLINE</title>
+
+    <!-- Links de Estilo -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css">
+
+    <style>
+        /* Corpo e fundo */
+        body {
+            background-color: #f5f5f5; /* Cinza claro para fundo */
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+
+        /* Barra de navegação e rodapé */
+        .header_breadcrumb, .ui.menu, .footer {
+            background-color: #5e2a84; /* Roxo mais suave e sofisticado */
+            color: white;
+        }
+
+        /* Estilo dos itens do menu */
+        .ui.menu .item {
+            color: white !important;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .ui.menu .item:hover {
+            background-color: #7c4d9f; /* Roxo mais claro para hover */
+        }
+
+        /* Ajuste do botão */
+        .ui.button {
+            background: linear-gradient(145deg, #7c4d9f, #5e2a84); /* Gradiente roxo */
+            color: white !important;
+            padding: 12px 24px;
+            border-radius: 50px; /* Bordas arredondadas */
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .ui.button:hover {
+            background: linear-gradient(145deg, #5e2a84, #7c4d9f);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Rodapé */
+        .footer a {
+            color: white;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            color: #4caf50; /* Verde suave para hover */
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background-color: #ffffff; /* Fundo branco para suavizar */
+            color: #5e2a84; /* Roxo */
+            padding: 80px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        .hero-section h2 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .hero-section p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        /* Cards de cursos */
+        .course-card {
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .course-card img:hover {
+            transform: scale(1.05);
+        }
+
+        .course-card h3 {
+            color: #5e2a84; /* Roxo */
+            font-size: 1.6em;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .course-card p {
+            color: #555;
+            font-size: 1em;
+        }
+
+        .course-card a {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #5e2a84;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .course-card a:hover {
+            background-color: #7c4d9f;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .courses-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .course-card img {
+                height: 150px;
+            }
+        }
+
+        /* Ajuste para telas grandes */
+        @media (min-width: 769px) {
+            .courses-container {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+        }
+
+        /* Barra de Navegação Superior */
+        .ui.menu {
+            background-color: #5e2a84; /* Roxo mais suave */
+        }
+
+        .ui.menu .item {
+            color: white !important;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .ui.menu .item:hover {
+            background-color: #7c4d9f; /* Roxo mais claro para hover */
+        }
+
+        /* Ajustes do botão */
+        .ui.big.blue.button {
+            background-color: #4caf50; /* Verde claro para o botão */
+            color: white;
+            font-weight: bold;
+            padding: 14px 30px;
+            border-radius: 50px;
+            text-transform: uppercase;
+        }
+
+        .ui.big.blue.button:hover {
+            background-color: #66bb6a; /* Verde mais forte no hover */
+            color: white;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://cdn.jpeg" type="image/x-icon">
+</head>
+
+<body id="example" class="index pushable">
+
+    <!-- Barra Lateral de Navegação -->
+    <div class="ui vertical sidebar menu left" id="toc">
+        <div class="item">
+            <a class="ui image" href="/">
+                <img style="max-width: 50px" src="ht.png">
+            </a>
+        </div>
+        <a class="item" href="/">Home</a>
+        <a class="item" href="/cursos/">Cursos</a>
+        <a class="item" href="/contato/">Contato</a>
+        <a class="item" href="/ead/">Login / Registrar</a>
+    </div>
+
+    <div class="pusher">
+        <div class="full height">
+
+            <!-- Barra de Navegação Superior -->
+            <div class="following bar light fixed">
+                <div class="ui large secondary network menu">
+                    <div class="ui container">
+                        <div class="item">
+                                                    </div>
+                        <div class="right menu">
+                            <a class="link item pc_item" href="/">Home</a>
+                            <a class="link item pc_item" href="/cursos/">Cursos</a>
+                            <a class="link item pc_item" href="/contato/">Contato</a>
+                            <a class="ui big blue button" href="/ead/">Login / Registrar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <h2>Descubra os Melhores Cursos Online</h2>
+                <p>Aprenda com os melhores materiais e professores do mercado.</p>
+            </div>
+
+            <!-- Cursos Disponíveis -->
+            <div class="courses-container">
+                <!-- Cursos -->
+                <div class="course-card">
+                    <img src="Capa.cuidadores.jpg" alt="Curso de cuidadores de idosos">
+                    <h3>Curso de Cuidadores de Idosos pelos Familiares</h3>
+                    <p>Aprenda sobre as principais orientações de Cuidadores de Idosos em Casa</p>
+                    <a href="page01.html">Acessar curso</a>
+                </div>
+
+                <div class="course-card">
+                    <img src="Banoffee.png" alt="Curso de Banoffe">
+                    <h3>Curso de Banoffe</h3>
+                    <p>Aprenda a fazer banoffe em casa e surpreenda seus amigos e familiares.</p>
+                    <a href="Curso Banofe.html">Acessar curso</a>
+                </div>
+
+                <div class="course-card">
+                    <img src="motofrete.jpg" alt="Curso de Pilotagem de Motofretista">
+                    <h3>Curso de Pilotagem de Motofretista</h3>
+                    <p>Aprenda a como ter uma condução segura sobre duas rodas.</p>
+                    <a href="INDISPONIVEL.HTML">Acessar curso</a>
+                </div>
+
+                <div class="course-card">
+                    <img src="Panoffe.jpeg" alt="Curso de Panoffee com Panetone">
+                    <h3>Curso de Panoffee feita com Panetone</h3>
+                    <p>Aprenda a fazer Panoffee com Panetone e surpreenda seus amigos e familiares.</p>
+                    <a href="Apreenda fazer Panoffee.html">Acessar curso</a>
+                </div>
+
+                <div class="course-card">
+                    <img src="Pintura de casa.png" alt="Curso de Pintura de Casas">
+                    <h3>Curso de Pintura de Casas</h3>
+                    <p>Aprenda as técnicas essenciais para pintar uma casa de maneira profissional, garantindo um acabamento de qualidade.</p>
+                    <a href="INDISPONIVEL.HTML">Acessar curso</a>
+                </div>
+
+                <div class="course-card">
+                    <img src="Jardinagem.jpg" alt="Curso de Jardinagem e Paisagismo">
+                    <h3>Curso de Jardinagem e Paisagismo</h3>
+                    <p>Aprenda a cuidar do seu jardim e a planejar paisagismos criativos para valorizar seu espaço ao ar livre.</p>
+                    <a href="INDISPONIVEL.HTML">Acessar curso</a>
+                </div>
+
+                <div class="course-card">
+                    <img src="Costura.jpg" alt="Curso de Costura para Iniciantes">
+                    <h3>Curso de Costura para Iniciantes</h3>
+                    <p>Aprenda desde o básico até técnicas avançadas de costura para criar suas próprias peças de roupas e acessórios.</p>
+                    <a href="INDISPONIVEL.HTML">Acessar curso</a>
+                </div>
+
+                <div class="course-card">
+                    <img src="Maquiagem.jpg" alt="Curso de Auto Maquiagem">
+                    <h3>Curso de Auto Maquiagem</h3>
+                    <p>Aprenda técnicas de maquiagem para realçar sua beleza de forma prática e rápida, com dicas de profissionais.</p>
+                    <a href="INDISPONIVEL.HTML">Acessar curso</a>
+                </div>
+
+                <div class="course-card">
+                    <img src="fotografia.jpg" alt="Curso de Fotografia Digital">
+                    <h3>Curso de Fotografia Digital</h3>
+                    <p>Aprenda os fundamentos da fotografia digital e como tirar fotos incríveis usando sua câmera ou smartphone.</p>
+                    <a href="INDISPONIVEL.HTML">Acessar curso</a>
+                </div>
+
+                <div class="course-card">
+                    <img src="corte-de-cabelo.jpg" alt="Curso de Corte de Cabelo Masculino e Feminino">
+                    <h3>Curso de Corte de Cabelo Masculino e Feminino</h3>
+                    <p>Aprenda técnicas de corte de cabelo para diferentes tipos de fios e estilos, tanto para homens quanto para mulheres.</p>
+                    <a href="INDISPONIVEL.HTML">Acessar curso</a>
+                </div>
+
+                <div class="course-card">
+                    <img src="Estudar.jpg" alt="Curso de Espanhol para Iniciantes">
+                    <h3>Curso de Espanhol para Iniciantes</h3>
+                    <p>Aprenda espanhol do zero, com conteúdo didático e exercícios práticos para desenvolver sua comunicação na língua.</p>
+                    <a href="INDISPONIVEL.HTML">Acessar curso</a>
+                </div>
+
+            </div>
+
+            <footer class="footer">
+                <p>&copy; Plataforma - AF Treinamentos e Desenvolvimentos - 2025 - Todos os direitos reservados</p>
+            </footer>
+
+        </div>
+    </div>
+</body>
+  </html>
+

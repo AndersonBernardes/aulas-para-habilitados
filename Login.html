@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AF Treinamentos - Login</title>
+
+    <meta property="og:image" content="https://www.exemplo.com/imagens/Capa.cuidadores.jpg">
+    <meta property="og:title" content="AF Treinamentos e Desenvolvimentos">
+    <meta property="og:description" content="Aprenda de maneira eficiente com cursos interativos e materiais exclusivos.">
+    <meta property="og:url" content="https://www.af-treinamentos.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AF Treinamentos e Desenvolvimentos">
+    <meta name="twitter:description" content="Aprenda de maneira eficiente com cursos interativos e materiais exclusivos.">
+    <meta name="twitter:image" content="CAPA.png">
+
+    <link href="https://www.af-treinamentos.com/style.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #6a1b9a; /* Roxo */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-top: 20px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .login-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .login-container a {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .login-container a:hover {
+            color: #ffcc00;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 80px auto;
+            padding: 30px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .form-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #6a1b9a; /* Roxo */
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #6a1b9a; /* Roxo */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #9c4dcc; /* Roxo claro */
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .footer p {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>AF CURSOS ONLINE</h1>
+        <p>Entrar para acessar os cursos e recursos exclusivos.</p>
+    </header>
+
+    <div class="container">
+        <h2 class="form-title">Login</h2>
+        <form action="/login" method="post">
+            <!-- Campo de Usuário -->
+            <div class="form-group">
+                <label for="username">Usuário</label>
+                <input type="text" id="username" name="username" required placeholder="Digite seu nome de usuário">
+            </div>
+
+            <!-- Campo de Senha -->
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" required placeholder="Digite sua senha">
+            </div>
+
+            <!-- Seleção de Tipo de Usuário -->
+            <div class="form-group">
+                <label for="user-type">Tipo de Usuário</label>
+                <select id="user-type" name="user-type" required>
+                    <option value="aluno">Aluno</option>
+                    <option value="creator">Creator</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+
+            <!-- Botão de Login -->
+            <button type="submit">Entrar</button>
+        </form>
+
+        <!-- Link para Cadastro -->
+        <div class="form-group">
+            <p>Não tem uma conta? <a href="/cadastro" style="color: #6a1b9a; font-weight: bold;">Cadastre-se aqui</a>.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; Plataforma - AF Treinamentos e Desenvolvimentos - 2025 - Todos os direitos reservados</p>
+    </footer>
+
+</body>
+
+</html>

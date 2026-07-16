@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pergunta 01</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="title">Pergunta 01</h1>
+            <p class="subtitle">Qual é a principal medida de segurança ao andar de moto?</p>
+            <form id="quizForm" class="quiz-form">
+                <ul>
+                    <li>
+                        <label>
+                            <input type="radio" name="resposta" value="errado"> Não usar capacete
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="resposta" value="errado"> Usar celular enquanto dirige
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="resposta" value="correto"> Usar capacete corretamente
+                        </label>
+                    </li>
+                </ul>
+            </form>
+            <div class="buttons">
+                <button id="verificar" class="btn" onclick="verificarResposta()">Verificar Resposta</button>
+                <button id="voltar" class="btn" onclick="window.location.href='page02.html'">Voltar</button>
+            </div>
+            <div id="feedback" class="feedback"></div>
+        </div>
+    </header>
+</body>
+</html>

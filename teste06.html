@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noções de Mecânica Básica para Mulheres</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .progress-container {
+            width: 100%;
+            background-color: #ddd;
+        }
+        .progress-bar {
+            height: 10px;
+            width: 10%;
+            background-color: #4caf50;
+        }
+        .content {
+            padding: 20px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            max-width: 900px;
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 10px;
+        }
+        .nav-buttons button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .nav-buttons button:disabled {
+            background-color: #ccc;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+        .dica {
+            background-color: #ffffcc;
+            padding: 10px;
+            border-left: 5px solid #ffcc00;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Noções de Mecânica Básica para Mulheres</h1>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <div class="content active" id="page-1">
+        <h2>1. Introdução à Mecânica Básica</h2>
+        <p>Este curso foi desenvolvido para ajudar mulheres a entenderem o funcionamento do seu veículo e aprenderem noções de manutenção preventiva.</p>
+        <div class="dica"><strong>Dica:</strong> Conhecer seu carro evita surpresas e economiza dinheiro com mecânicos.</div>
+    </div>
+
+    <div class="content" id="page-2">
+        <h2>2. O Motor e Seus Componentes</h2>
+        <p>O motor é o coração do carro. Ele converte energia química do combustível em energia mecânica para movimentar o veículo.</p>
+        <ul>
+            <li><strong>Bloco do motor:</strong> Abriga os cilindros onde ocorre a combustão.</li>
+            <li><strong>Pistões:</strong> Movem-se para cima e para baixo dentro dos cilindros.</li>
+            <li><strong>Velas de ignição:</strong> Produzem faíscas que inflamam o combustível.</li>
+        </ul>
+        <div class="dica"><strong>Dica:</strong> Troque o óleo do motor regularmente para evitar desgaste e falhas.</div>
+    </div>
+
+    <div class="content" id="page-3">
+        <h2>3. Sistema de Transmissão</h2>
+        <p>A transmissão leva a força do motor para as rodas. Pode ser manual ou automática.</p>
+        <div class="dica"><strong>Dica:</strong> Evite descansar o pé na embreagem para prolongar sua vida útil.</div>
+    </div>
+
+    <div class="content" id="page-4">
+        <h2>4. Freios e Segurança</h2>
+        <p>Os freios são essenciais para parar o carro com segurança. Existem freios a disco e a tambor.</p>
+        <div class="dica"><strong>Dica:</strong> Se ouvir ruídos ao frear, leve o carro ao mecânico para verificar as pastilhas.</div>
+    </div>
+
+    <div class="content" id="page-5">
+        <h2>5. Suspensão e Pneus</h2>
+        <p>A suspensão mantém o carro estável e absorve impactos da estrada.</p>
+        <div class="dica"><strong>Dica:</strong> Calibre os pneus a cada 15 dias para evitar desgaste irregular.</div>
+    </div>
+
+    <div class="content" id="page-6">
+        <h2>6. Sistema Elétrico e Bateria</h2>
+        <p>A bateria fornece energia para o carro. Se ela falhar, o carro pode não ligar.</p>
+        <div class="dica"><strong>Dica:</strong> Evite deixar os faróis ligados com o carro desligado para não descarregar a bateria.</div>
+    </div>
+
+    <div class="content" id="page-7">
+        <h2>7. Manutenção Preventiva</h2>
+        <p>Manter o carro revisado aumenta sua durabilidade e evita gastos desnecessários.</p>
+        <div class="dica"><strong>Dica:</strong> Consulte o manual do veículo para seguir o cronograma de revisões.</div>
+    </div>
+
+    <div class="content" id="page-8">
+        <h2>8. Emergências e Soluções Rápidas</h2>
+        <p>Saiba como agir em caso de pane elétrica ou pneu furado.</p>
+        <div class="dica"><strong>Dica:</strong> Tenha um kit de ferramentas básicas no carro.</div>
+    </div>
+
+    <div class="content" id="page-9">
+        <h2>9. Fluidos Essenciais do Veículo</h2>
+        <p>Troque regularmente o óleo do motor, fluido de freio e líquido de arrefecimento.</p>
+        <div class="dica"><strong>Dica:</strong> Nunca complete o líquido de arrefecimento com água pura.</div>
+    </div>
+
+    <div class="content" id="page-10">
+        <h2>10. Checklist para Longas Viagens</h2>
+        <p>Antes de viajar, verifique os pneus, nível de óleo e faróis.</p>
+        <div class="dica"><strong>Dica:</strong> Sempre leve um estepe em boas condições.</div>
+    </div>
+
+    <div class="content" id="page-11">
+        <h2>Avaliação Final</h2>
+        <form id="quiz-form">
+            <p>1. Qual a principal função do motor?</p>
+            <input type="radio" name="q1" value="certo"> Transformar combustível em energia <br>
+            <input type="radio" name="q1" value="errado"> Apenas manter o carro ligado <br>
+
+            <br>
+            <button type="button" onclick="checkQuiz()">Ver Resultado</button>
+        </form>
+        <p id="quiz-result"></p>
+    </div>
+
+    <div class="nav-buttons">
+        <button id="prev-btn" onclick="changePage(-1)" disabled>Anterior</button>
+        <button id="next-btn" onclick="changePage(1)">Próximo</button>
+    </div>
+
+    <script>
+        let currentPage = 1;
+        function changePage(direction) {
+            document.getElementById(`page-${currentPage}`).classList.remove('active');
+            currentPage += direction;
+            document.getElementById(`page-${currentPage}`).classList.add('active');
+        }
+
+        function checkQuiz() {
+            let correct = document.querySelectorAll('input[value="certo"]:checked').length;
+            document.getElementById("quiz-result").innerText = `Você acertou ${correct} de 1 questão!`;
+        }
+    </script>
+
+</body>
+</html>

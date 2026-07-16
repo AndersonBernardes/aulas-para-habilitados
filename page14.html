@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Interativo - Segurança do Idoso</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        #lixeira {
+            width: 150px;
+            height: 150px;
+            background-color: #e74c3c;
+            border-radius: 50%;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3em;
+            color: white;
+            cursor: pointer;
+            border: 2px solid #c0392b;
+        }
+
+        #lixeira.dropped {
+            background-color: #2ecc71;
+        }
+
+        .item {
+            margin: 10px;
+            padding: 15px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            width: 250px;
+            text-align: center;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+
+        .item:hover {
+            background-color: #2980b9;
+        }
+
+        .item.moving {
+            position: absolute;
+            z-index: 10;
+            cursor: move;
+        }
+
+        /* Botão de "Responder" */
+        #responder-btn {
+            background-color: #27ae60; /* Verde */
+            color: white;
+            font-size: 1.1em;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 20px;
+            display: none; /* Inicialmente escondido */
+            position: fixed;
+            right: 50px;
+            bottom: 50px;
+        }
+
+        #responder-btn:hover {
+            background-color: #2ecc71;
+            transform: scale(1.05);
+        }
+
+        #responder-btn:active {
+            background-color: #1e824c;
+        }
+
+        .feedback {
+            font-size: 1.2em;
+            margin-top: 20px;
+            color: #e74c3c;
+        }
+
+        /* Botões de navegação */
+        .buttons {
+            margin-top: 20px;
+            display: none;
+            gap: 20px;
+        }
+
+        .btn {
+            background-color: #3498db;
+            color: white;
+            font-size: 1.1em;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+        .btn:active {
+            background-color: #1c6ea4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Arraste os itens para a lixeira de acordo com o risco à mobilidade do idoso</h2>
+
+        <!-- Itens interativos (5 itens de risco e 5 facilitadores) -->
+        <div id="item1" class="item" draggable="true" ondragstart="drag(event)">Tapetes soltos ou escorregadios</div>
+        <div id="item2" class="item" draggable="true" ondragstart="drag(event)">Calçados inadequados</div>
+        <div id="item3" class="item" draggable="true" ondragstart="drag(event)">Iluminação insuficiente</div>
+        <div id="item4" class="item" draggable="true" ondragstart="drag(event)">Degraus e escadas sem corrimão</div>
+        <div id="item5" class="item" draggable="true" ondragstart="drag(event)">Superfícies irregulares</div>
+
+        <div id="item6" class="item" draggable="true" ondragstart="drag(event)">Corrimões seguros</div>
+        <div id="item7" class="item" draggable="true" ondragstart="drag(event)">Iluminação adequada</div>
+        <div id="item8" class="item" draggable="true" ondragstart="drag(event)">Calçados ortopédicos</div>
+        <div id="item9" class="item" draggable="true" ondragstart="drag(event)">Andador</div>
+        <div id="item10" class="item" draggable="true" ondragstart="drag(event)">Superfície antiderrapante</div>
+
+        <!-- Lixeira -->
+        <div id="lixeira" ondragover="allowDrop(event)" ondrop="drop(event)">
+            🗑️
+        </div>
+
+        <!-- Feedback -->
+        <div id="feedback" class="feedback"></div>
+
+        <!-- Botões de navegação -->
+        <div class="buttons" id="buttons">
+            <button class="btn" onclick="window.location.href='/..index.html'">Voltar</button>
+            <button class="btn" onclick="window.location.href='page15.html'">Avançar</button>
+        </div>
+    </div>
+
+    <!-- Botão "Responder" -->
+    <button id="responder-btn" onclick="responder()">Responder</button>
+
+    <script>
+        let correctItems = ["item1", "item2", "item3", "item4", "item5"];  // Itens que devem ser colocados na lixeira
+        let droppedItems = [];  // Itens que foram arrastados corretamente
+        let allItems = [];  // Todos os itens arrastáveis
+        let feedback = document.getElementById('feedback');
+
+        // Inicializar itens
+        window.onload = () => {
+            allItems = document.querySelectorAll('.item');
+        };
+
+        // Função de arrastar
+        function drag(event) {
+            event.dataTransfer.setData("text", event.target.id);
+        }
+
+        // Função para permitir que o item seja soltado na lixeira
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        // Função de soltar o item na lixeira
+        function drop(event) {
+            event.preventDefault();
+            let data = event.dataTransfer.getData("text");
+            let item = document.getElementById(data);
+
+            // Esconde o item assim que for arrastado para a lixeira
+            item.style.display = "none";
+
+            // Verifica se o item é correto
+            if (correctItems.includes(data)) {
+                if (!droppedItems.includes(data)) {
+                    droppedItems.push(data);
+                    document.getElementById('lixeira').classList.add("dropped");  // Muda a cor da lixeira para verde
+                }
+            }
+
+            // Habilita o botão responder após o primeiro arraste
+            if (droppedItems.length > 0) {
+                document.getElementById('responder-btn').style.display = "block";
+            }
+        }
+
+        // Função para responder (verificar)
+        function responder() {
+            // Limpa o feedback antes de verificar a resposta
+            feedback.textContent = "";
+
+            // Verifica se o aluno arrastou todos os itens corretos
+            if (droppedItems.length === correctItems.length) {
+                feedback.textContent = "Parabéns! Você acertou todos os itens.";
+                feedback.classList.remove("incorrect");
+                feedback.classList.add("correct");
+                showNavigationButtons();  // Mostra os botões de navegação
+            } else {
+                feedback.textContent = "Você errou. Tente novamente.";
+                feedback.classList.remove("correct");
+                feedback.classList.add("incorrect");
+                resetItems();  // Reseta o exercício
+            }
+        }
+
+        // Função para mostrar os botões de navegação
+        function showNavigationButtons() {
+            document.getElementById('buttons').style.display = "block";
+        }
+
+        // Função para resetar os itens
+        function resetItems() {
+            droppedItems = [];
+            allItems.forEach(item => {
+                item.style.display = "inline-block";  // Reexibe os itens
+            });
+            document.getElementById('lixeira').classList.remove("dropped");
+            document.getElementById('responder-btn').style.display = "none";
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="theme-color" content="#ffffff">
+    <title>AF CURSOS ONLINE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #fff;
+            color: #6a1b9a;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #6a1b9a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .course-description {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .course-description img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-description div {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #9c4dcc;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .course-content {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-content h3 {
+            font-size: 1.8rem;
+            color: #9c4dcc;
+            margin-bottom: 10px;
+        }
+
+        .course-content ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .course-content ul li {
+            margin: 10px 0;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        .recipe-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .recipe-section h3 {
+            color: #9c4dcc;
+        }
+
+        .ingredients, .steps {
+            margin-top: 20px;
+        }
+
+        .ingredients ul, .steps ol {
+            margin-left: 20px;
+        }
+
+        .evaluation-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .evaluation-section h3 {
+            color: #9c4dcc;
+            font-size: 1.8rem;
+        }
+
+        .evaluation-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .evaluation-section li {
+            margin: 10px 0;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .footer p {
+            font-size: 1rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .course-description {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Aprenda a Fazer Torta de Banana Banoffee</h1>
+        <p>Descubra os segredos para criar uma deliciosa e irresistível torta de banana banoffee!</p>
+    </header>
+
+    <div class="container">
+        <section class="course-description">
+            <div>
+                <h2>Sobre o Curso</h2>
+                <p>Aprenda passo a passo como fazer a famosa torta de banana banoffee. A mistura perfeita de banana, doce de leite e chantilly sobre uma crosta de biscoito, que vai encantar seu paladar!</p>
+                <p>Este curso inclui técnicas de preparo, dicas exclusivas para deixar sua torta ainda mais saborosa, e variações da receita para você experimentar e surpreender seus convidados.</p>
+            </div>
+
+            <img src="Banoffee.png" alt="Imagem da Torta de Banana Banoffee">
+        </section>
+
+        <section class="course-content">
+            <h3>Conteúdo do Curso</h3>
+            <ul>
+                <li>Introdução aos ingredientes principais e como escolhê-los</li>
+                <li>Como fazer a base da torta com biscoito de forma fácil e rápida</li>
+                <li>Preparo do doce de leite perfeito e segredos para o ponto ideal</li>
+                <li>Montagem e finalização da torta de banana banoffee</li>
+                <li>Dicas de apresentação e variações da receita para diferentes ocasiões</li>
+            </ul>
+        </section>
+
+        <!-- Receita da Torta Banoffee -->
+        <section class="recipe-section">
+            <h3>Receita: Torta de Banana Banoffee</h3>
+
+            <div class="ingredients">
+                <h4>Ingredientes:</h4>
+                <ul>
+                    <li>1 pacote de biscoito de maisena</li>
+                    <li>100g de manteiga derretida</li>
+                    <li>2 bananas maduras</li>
+                    <li>1 lata de leite condensado (para o doce de leite)</li>
+                    <li>200g de creme de leite fresco</li>
+                    <li>2 colheres de sopa de açúcar</li>
+                    <li>Chocolate em pó (opcional, para decorar)</li>
+                </ul>
+            </div>
+
+            <div class="steps">
+                <h4>Modo de Preparo:</h4>
+                <ol>
+                    <li><strong>Base da torta:</strong> Triture os biscoitos de maisena no processador até obter uma farofa. Misture com a manteiga derretida até formar uma massa úmida. Forre o fundo de uma forma de fundo removível e leve à geladeira por 15 minutos.</li>
+                    <li><strong>Doce de leite:</strong> Cozinhe a lata de leite condensado em uma panela de pressão por cerca de 40 minutos (ou utilize doce de leite pronto). Reserve e deixe esfriar.</li>
+                    <li><strong>Chantilly:</strong> Bata o creme de leite fresco com o açúcar até formar chantilly. Reserve na geladeira.</li>
+                    <li><strong>Montagem:</strong> Retire a base da torta da geladeira e espalhe o doce de leite por cima. Adicione as bananas cortadas em rodelas por cima do doce de leite.</li>
+                    <li><strong>Finalização:</strong> Cubra as bananas com o chantilly. Decore com chocolate em pó ou raspas de chocolate (opcional).</li>
+                    <li><strong>Refrigeração:</strong> Leve a torta à geladeira por pelo menos 2 horas antes de servir.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Avaliação do Curso -->
+        <section class="evaluation-section">
+            <h3>Teste seus conhecimentos!</h3>
+            <form>
+                <ul>
+                    <li>
+                        <label for="q1">Qual ingrediente é essencial para o doce de leite?</label>
+                        <select id="q1" name="q1">
+                            <option value="a">Leite condensado</option>
+                            <option value="b">Creme de leite</option>
+                            <option value="c">Bananas maduras</option>
+                            <option value="d">Chocolate em pó</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="q2">Como é feita a base da torta?</label>
+                        <select id="q2" name="q2">
+                            <option value="a">Com biscoito e manteiga derretida</option>
+                            <option value="b">Com chocolate e farinha de trigo</option>
+                            <option value="c">Com maçã e açúcar</option>
+                            <option value="d">Com ovos e açúcar</option>
+                        </select>
+                    </li>
+                </ul>
+                <button type="submit">Enviar Respostas</button>
+            </form>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; Plataforma - AF Treinamentos e Desenvolvimentos - 2025 - Todos os direitos reservados</p>
+    </footer>
+
+</body>
+</html>

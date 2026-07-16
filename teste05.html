@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Condução Segura para Motofretistas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+        .content {
+            padding: 20px;
+            margin: 20px auto 60px;
+            background-color: white;
+            border-radius: 8px;
+            max-width: 900px;
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .nav-buttons button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .nav-buttons button:disabled {
+            background-color: #ccc;
+        }
+        .progress-container {
+            width: 100%;
+            background-color: #ddd;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 10px;
+        }
+        .progress-bar {
+            height: 10px;
+            width: 0%;
+            background-color: #007BFF;
+            transition: width 0.3s;
+        }
+        .status {
+            position: fixed;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
+        }
+        .quiz div {
+            margin-bottom: 10px;
+        }
+        .feedback {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        #certificado {
+            display: none;
+            margin-top: 20px;
+        }
+        #certificado a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        #certificado a:hover {
+            background-color: #1da851;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Curso de Condução Segura para Motofretistas</h1>
+    </div>
+
+    <p class="status" id="status-text">Progresso: 0%</p>
+
+    <!-- Páginas de Conteúdo -->
+    <div class="content active" id="page-1">
+        <h2>1. Equipamentos de Segurança</h2>
+        <p>Texto sobre equipamentos de segurança...</p>
+    </div>
+
+    <div class="content" id="page-2">
+        <h2>2. Direção Defensiva</h2>
+        <p>Texto sobre direção defensiva...</p>
+    </div>
+
+    <div class="content" id="page-3">
+        <h2>3. Revisão Diária da Moto</h2>
+        <p>Texto sobre revisão diária da moto...</p>
+    </div>
+
+    <div class="content" id="page-4">
+        <h2>4. Manutenção Preventiva</h2>
+        <p>Texto sobre manutenção preventiva...</p>
+    </div>
+
+    <div class="content" id="page-5">
+        <h2>5. Condução Econômica</h2>
+        <p>Texto sobre condução econômica...</p>
+    </div>
+
+    <div class="content" id="page-6">
+        <h2>6. Zelando pela Carga Transportada</h2>
+        <p>Texto sobre a carga transportada...</p>
+    </div>
+
+    <!-- Avaliação Final -->
+    <div class="content" id="page-7">
+        <h2>Avaliação Final</h2>
+        <p>Responda as perguntas abaixo e veja seu resultado.</p>
+
+        <div class="quiz">
+            <div id="question-container"></div>
+        </div>
+
+        <div class="nav-buttons">
+            <button id="answer-question" onclick="checkAnswer()">Responder</button>
+        </div>
+
+        <p id="resultado"></p>
+
+        <div id="certificado">
+            <h3>Parabéns! Você pode solicitar seu certificado.</h3>
+            <a id="whatsapp-link" href="#" target="_blank">Solicitar pelo WhatsApp</a>
+        </div>
+    </div>
+
+    <div class="nav-buttons" id="page-navigation">
+        <button id="prev-btn" onclick="changePage(-1)" disabled>Voltar</button>
+        <button id="next-btn" onclick="changePage(1)">Avançar</button>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <script>
+        let currentPage = 1;
+        const totalPages = 7;
+        let currentQuestion = 0;
+        let score = 0;  // Para armazenar a pontuação
+        const questions = [
+            { text: "Qual é o equipamento de segurança obrigatório?", options: ["Luvas", "Capacete"], correct: 1 },
+            { text: "Qual a distância mínima de segurança recomendada no trânsito?", options: ["1 segundo", "2 segundos"], correct: 1 },
+            { text: "Qual a velocidade máxima permitida em vias urbanas para motocicletas?", options: ["50 km/h", "60 km/h"], correct: 0 },
+            { text: "O que significa condução defensiva?", options: ["Agressividade no trânsito", "Prevenção de acidentes"], correct: 1 },
+            { text: "Quando revisar os freios da moto?", options: ["A cada 10.000 km", "Periodicamente"], correct: 1 },
+            { text: "O capacete deve estar sempre:", options: ["Ajustado corretamente", "Solto"], correct: 0 },
+            { text: "O uso de viseira ou óculos de proteção é:", options: ["Opcional", "Obrigatório"], correct: 1 },
+            { text: "O que fazer ao transportar carga?", options: ["Equilibrá-la corretamente", "Não se preocupar"], correct: 0 },
+            { text: "Qual o benefício da manutenção preventiva?", options: ["Evitar problemas mecânicos", "Apenas gastar dinheiro"], correct: 0 },
+            { text: "Ao pilotar na chuva, o que é recomendado?", options: ["Reduzir a velocidade", "Acelerar para chegar rápido"], correct: 0 }
+        ];
+
+        function changePage(direction) {
+            document.getElementById(`page-${currentPage}`).classList.remove('active');
+            currentPage += direction;
+            document.getElementById(`page-${currentPage}`).classList.add('active');
+
+            // Atualiza a visibilidade dos botões "Voltar" e "Avançar"
+            document.getElementById("prev-btn").disabled = currentPage === 1;
+            document.getElementById("next-btn").disabled = currentPage === totalPages;
+
+            updateProgress();
+        }
+
+        function updateProgress() {
+            let progress = ((currentPage - 1) / (totalPages - 1)) * 100;
+            document.getElementById('progress-bar').style.width = `${progress}%`;
+            document.getElementById('status-text').textContent = `Progresso: ${Math.round(progress)}%`;
+        }
+
+        function loadQuestion() {
+            const q = questions[currentQuestion];
+            document.getElementById("question-container").innerHTML = `<p>${currentQuestion + 1}. ${q.text}</p>
+                <input type="radio" name="q${currentQuestion}" value="0"> ${q.options[0]}<br>
+                <input type="radio" name="q${currentQuestion}" value="1"> ${q.options[1]}<br>`;
+
+            // Limpar feedback anterior
+            document.getElementById("question-container").innerHTML += '<div id="feedback"></div>';
+        }
+
+        function checkAnswer() {
+            const selectedOption = document.querySelector(`input[name="q${currentQuestion}"]:checked`);
+            if (!selectedOption) return false; // Nenhuma resposta selecionada
+
+            const isCorrect = selectedOption.value == questions[currentQuestion].correct;
+            const feedback = document.getElementById("feedback");
+
+            if (isCorrect) {
+                feedback.textContent = "Resposta correta!";
+                feedback.style.color = "green";
+                score++;
+            } else {
+                feedback.textContent = "Resposta incorreta!";
+                feedback.style.color = "red";
+            }
+
+            // Espera 2 segundos antes de passar para a próxima pergunta
+            setTimeout(() => {
+                if (currentQuestion < questions.length - 1) {
+                    currentQuestion++;
+                    loadQuestion();
+                } else {
+                    showResults();
+                }
+            }, 2000);
+
+            return true;
+        }
+
+        function showResults() {
+            const finalScore = (score / questions.length) * 100;
+            const resultadoText = finalScore >= 50 ? `Você acertou ${score} de ${questions.length} questões. Parabéns!` : `Você acertou ${score} de ${questions.length} questões. Tente novamente.`;
+            document.getElementById("resultado").textContent = resultadoText;
+
+            if (finalScore >= 50) {
+                document.getElementById("certificado").style.display = "block";
+            }
+        }
+
+        loadQuestion();
+    </script>
+
+</body>
+</html>
