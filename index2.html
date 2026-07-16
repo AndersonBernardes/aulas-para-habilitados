@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Jonas Treinamentos</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Splash */
+
+#splash{
+
+    position:fixed;
+    inset:0;
+
+    background:url("imagens/banner-home.webp") center center no-repeat;
+    background-size:cover;
+
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+
+    z-index:9999;
+
+    transition:1s;
+}
+
+.botao{
+
+    margin-bottom:40px;
+
+    background:#25D366;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:18px 45px;
+
+    border-radius:50px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+}
+
+.ocultar{
+
+    opacity:0;
+    visibility:hidden;
+
+}
+
+/* Página */
+
+#pagina{
+
+    display:none;
+    width:100%;
+    height:100vh;
+
+    justify-content:center;
+    align-items:center;
+
+    background:#101820;
+
+    color:white;
+
+    font-size:40px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="splash">
+
+    <a class="botao" href="login.html">
+        ACESSAR SISTEMA
+    </a>
+
+</div>
+
+<div id="pagina">
+
+Tela Principal
+
+</div>
+
+<script>
+
+setTimeout(function(){
+
+    document.getElementById("splash").classList.add("ocultar");
+
+    setTimeout(function(){
+
+        document.getElementById("splash").style.display="none";
+        document.getElementById("pagina").style.display="flex";
+
+    },1000);
+
+},3000);
+
+</script>
+
+</body>
+</html>
